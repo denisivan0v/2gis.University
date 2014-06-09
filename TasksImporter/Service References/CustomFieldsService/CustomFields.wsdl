@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/Imports">
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd3" namespace="http://Microsoft.Office.Project.Interfaces/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustomFields_CheckOutCustomFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutCustomFields" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckOutCustomFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckOutCustomFields_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q1:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckOutCustomFields_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q2:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckInCustomFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInCustomFields" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckInCustomFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckInCustomFields_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q3:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CheckInCustomFields_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q4:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFields" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q5:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q6:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByMdPropUids" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByMdPropUidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q7:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q8:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByEntity" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q9:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q10:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomFields" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q11:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q12:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomFields" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q13:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q14:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_DeleteCustomFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomFields" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_DeleteCustomFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_DeleteCustomFields_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q15:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_DeleteCustomFields_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q16:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomFields2" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomFields2Response" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields2_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q17:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_CreateCustomFields2_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q18:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields2_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomFields2" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomFields2Response" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields2_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q19:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_UpdateCustomFields2_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q20:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFields2" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFields2Response" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields2_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q21:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFields2_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q22:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByMdPropUids2" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByMdPropUids2Response" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids2_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q23:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByMdPropUids2_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q24:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByEntity2" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadCustomFieldsByEntity2Response" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity2_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q25:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CustomFields_ReadCustomFieldsByEntity2_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q26:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:portType name="CustomFields">
+    <wsdl:operation name="CheckOutCustomFields">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckOutCustomFields" message="tns:CustomFields_CheckOutCustomFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckOutCustomFieldsResponse" message="tns:CustomFields_CheckOutCustomFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CheckOutCustomFieldsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_CheckOutCustomFields_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CheckOutCustomFieldsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_CheckOutCustomFields_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInCustomFields">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckInCustomFields" message="tns:CustomFields_CheckInCustomFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckInCustomFieldsResponse" message="tns:CustomFields_CheckInCustomFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CheckInCustomFieldsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_CheckInCustomFields_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CheckInCustomFieldsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_CheckInCustomFields_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFields">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields" message="tns:CustomFields_ReadCustomFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsResponse" message="tns:CustomFields_ReadCustomFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_ReadCustomFields_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_ReadCustomFields_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByMdPropUids">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids" message="tns:CustomFields_ReadCustomFieldsByMdPropUids_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUidsResponse" message="tns:CustomFields_ReadCustomFieldsByMdPropUids_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByMdPropUidsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_ReadCustomFieldsByMdPropUids_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByMdPropUidsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_ReadCustomFieldsByMdPropUids_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByEntity">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity" message="tns:CustomFields_ReadCustomFieldsByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntityResponse" message="tns:CustomFields_ReadCustomFieldsByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByEntityServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_ReadCustomFieldsByEntity_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByEntityDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_ReadCustomFieldsByEntity_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomFields">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields" message="tns:CustomFields_CreateCustomFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFieldsResponse" message="tns:CustomFields_CreateCustomFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CreateCustomFieldsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_CreateCustomFields_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CreateCustomFieldsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_CreateCustomFields_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomFields">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields" message="tns:CustomFields_UpdateCustomFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFieldsResponse" message="tns:CustomFields_UpdateCustomFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/UpdateCustomFieldsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_UpdateCustomFields_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/UpdateCustomFieldsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_UpdateCustomFields_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomFields">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/DeleteCustomFields" message="tns:CustomFields_DeleteCustomFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/DeleteCustomFieldsResponse" message="tns:CustomFields_DeleteCustomFields_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/DeleteCustomFieldsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_DeleteCustomFields_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/DeleteCustomFieldsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_DeleteCustomFields_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomFields2">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields2" message="tns:CustomFields_CreateCustomFields2_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields2Response" message="tns:CustomFields_CreateCustomFields2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CreateCustomFields2ServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_CreateCustomFields2_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/CreateCustomFields2DefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_CreateCustomFields2_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomFields2">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields2" message="tns:CustomFields_UpdateCustomFields2_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields2Response" message="tns:CustomFields_UpdateCustomFields2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/UpdateCustomFields2ServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_UpdateCustomFields2_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/UpdateCustomFields2DefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_UpdateCustomFields2_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFields2">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields2" message="tns:CustomFields_ReadCustomFields2_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields2Response" message="tns:CustomFields_ReadCustomFields2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFields2ServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_ReadCustomFields2_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFields2DefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_ReadCustomFields2_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByMdPropUids2">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids2" message="tns:CustomFields_ReadCustomFieldsByMdPropUids2_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids2Response" message="tns:CustomFields_ReadCustomFieldsByMdPropUids2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByMdPropUids2ServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_ReadCustomFieldsByMdPropUids2_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByMdPropUids2DefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_ReadCustomFieldsByMdPropUids2_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByEntity2">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity2" message="tns:CustomFields_ReadCustomFieldsByEntity2_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity2Response" message="tns:CustomFields_ReadCustomFieldsByEntity2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByEntity2ServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:CustomFields_ReadCustomFieldsByEntity2_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CustomFields/ReadCustomFieldsByEntity2DefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:CustomFields_ReadCustomFieldsByEntity2_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

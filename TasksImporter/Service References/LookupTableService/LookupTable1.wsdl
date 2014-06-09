@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/Imports">
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd3" namespace="http://Microsoft.Office.Project.Interfaces/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableDataSet/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="LookupTable_CheckOutLookupTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutLookupTables" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckOutLookupTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutLookupTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckOutLookupTables_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q1:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckOutLookupTables_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q2:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckInLookupTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInLookupTables" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckInLookupTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInLookupTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckInLookupTables_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q3:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CheckInLookupTables_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q4:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLang_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesMultiLang" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesMultiLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLang_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q5:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLang_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q6:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTablesMultiLang_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLookupTablesMultiLang" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTablesMultiLang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLookupTablesMultiLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTablesMultiLang_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q7:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTablesMultiLang_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q8:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_DeleteLookupTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLookupTables" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_DeleteLookupTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLookupTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_DeleteLookupTables_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q9:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_DeleteLookupTables_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q10:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTablesMultiLang_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLookupTablesMultiLang" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTablesMultiLang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLookupTablesMultiLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTablesMultiLang_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q11:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTablesMultiLang_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q12:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTables" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTables_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q13:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTables_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q14:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesByUids_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesByUids" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesByUids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesByUidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesByUids_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q15:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesByUids_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q16:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLangByUids_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesMultiLangByUids" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLangByUids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLookupTablesMultiLangByUidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLangByUids_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q17:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_ReadLookupTablesMultiLangByUids_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q18:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLookupTables" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLookupTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTables_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q19:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_CreateLookupTables_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q20:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLookupTables" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLookupTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTables_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q21:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="LookupTable_UpdateLookupTables_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q22:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:portType name="LookupTable">
+    <wsdl:operation name="CheckOutLookupTables">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CheckOutLookupTables" message="tns:LookupTable_CheckOutLookupTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CheckOutLookupTablesResponse" message="tns:LookupTable_CheckOutLookupTables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CheckOutLookupTablesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_CheckOutLookupTables_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CheckOutLookupTablesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_CheckOutLookupTables_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInLookupTables">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CheckInLookupTables" message="tns:LookupTable_CheckInLookupTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CheckInLookupTablesResponse" message="tns:LookupTable_CheckInLookupTables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CheckInLookupTablesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_CheckInLookupTables_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CheckInLookupTablesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_CheckInLookupTables_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadLookupTablesMultiLang">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesMultiLang" message="tns:LookupTable_ReadLookupTablesMultiLang_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesMultiLangResponse" message="tns:LookupTable_ReadLookupTablesMultiLang_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesMultiLangDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_ReadLookupTablesMultiLang_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesMultiLangServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_ReadLookupTablesMultiLang_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLookupTablesMultiLang">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CreateLookupTablesMultiLang" message="tns:LookupTable_CreateLookupTablesMultiLang_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CreateLookupTablesMultiLangResponse" message="tns:LookupTable_CreateLookupTablesMultiLang_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CreateLookupTablesMultiLangDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_CreateLookupTablesMultiLang_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CreateLookupTablesMultiLangServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_CreateLookupTablesMultiLang_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLookupTables">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/DeleteLookupTables" message="tns:LookupTable_DeleteLookupTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/DeleteLookupTablesResponse" message="tns:LookupTable_DeleteLookupTables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/DeleteLookupTablesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_DeleteLookupTables_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/DeleteLookupTablesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_DeleteLookupTables_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLookupTablesMultiLang">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/UpdateLookupTablesMultiLang" message="tns:LookupTable_UpdateLookupTablesMultiLang_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/UpdateLookupTablesMultiLangResponse" message="tns:LookupTable_UpdateLookupTablesMultiLang_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/UpdateLookupTablesMultiLangServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_UpdateLookupTablesMultiLang_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/UpdateLookupTablesMultiLangDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_UpdateLookupTablesMultiLang_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadLookupTables">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTables" message="tns:LookupTable_ReadLookupTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesResponse" message="tns:LookupTable_ReadLookupTables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_ReadLookupTables_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_ReadLookupTables_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadLookupTablesByUids">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesByUids" message="tns:LookupTable_ReadLookupTablesByUids_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesByUidsResponse" message="tns:LookupTable_ReadLookupTablesByUids_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesByUidsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_ReadLookupTablesByUids_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesByUidsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_ReadLookupTablesByUids_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadLookupTablesMultiLangByUids">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesMultiLangByUids" message="tns:LookupTable_ReadLookupTablesMultiLangByUids_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/ReadLookupTablesMultiLangByUidsResponse" message="tns:LookupTable_ReadLookupTablesMultiLangByUids_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesMultiLangByUidsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_ReadLookupTablesMultiLangByUids_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/ReadLookupTablesMultiLangByUidsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_ReadLookupTablesMultiLangByUids_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLookupTables">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CreateLookupTables" message="tns:LookupTable_CreateLookupTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/CreateLookupTablesResponse" message="tns:LookupTable_CreateLookupTables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CreateLookupTablesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_CreateLookupTables_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/CreateLookupTablesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_CreateLookupTables_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLookupTables">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/UpdateLookupTables" message="tns:LookupTable_UpdateLookupTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/UpdateLookupTablesResponse" message="tns:LookupTable_UpdateLookupTables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/UpdateLookupTablesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:LookupTable_UpdateLookupTables_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/LookupTable/UpdateLookupTablesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:LookupTable_UpdateLookupTables_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

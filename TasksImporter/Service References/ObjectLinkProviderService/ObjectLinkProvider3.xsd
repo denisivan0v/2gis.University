@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+  <xs:element name="ReadLinkedWebObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="objectUid" type="q1:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="filterWebObjectTypes" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLinkedWebObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadLinkedWebObjectsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectLinkedWebObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q2:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="filterWebObjectTypes" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includeTaskLinkedObjects" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectLinkedWebObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectLinkedWebObjectsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTaskLinkedWebObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="taskUid" type="q3:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="filterWebObjectTypes" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTaskLinkedWebObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadTaskLinkedWebObjectsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSharePointItemLinkedWebObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="tpId" type="xs:int" />
+        <xs:element xmlns:q4="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sharePointListName" type="q4:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="filterWebObjectTypes" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSharePointItemLinkedWebObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadSharePointItemLinkedWebObjectsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadWebObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="webObjectUid" type="q5:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadWebObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadWebObjectResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectWebObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q6:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includeTaskObjects" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectWebObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectWebObjectResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTaskWebObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="taskUid" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTaskWebObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadTaskWebObjectResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSharePointWebObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="tpId" type="xs:int" />
+        <xs:element xmlns:q8="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sharePointListName" type="q8:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSharePointWebObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadSharePointWebObjectResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadObjectByDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadObjectByDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadObjectByDescriptionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebObjectLinksByGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="webObjectUid" type="q9:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="webObjectUidsToLinkTo" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="linkTypes" type="tns:ArrayOfWebObjectLinkType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q10:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfWebObjectLinkType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebObjectLinkType" type="tns:WebObjectLinkType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="WebObjectLinkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoLink" />
+      <xs:enumeration value="General" />
+      <xs:enumeration value="Affected" />
+      <xs:enumeration value="Action" />
+      <xs:enumeration value="Impact" />
+      <xs:enumeration value="Trigger" />
+      <xs:enumeration value="Mitigation" />
+      <xs:enumeration value="Contingency" />
+      <xs:enumeration value="DocGeneral" />
+      <xs:enumeration value="TaskIsDoc" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreateWebObjectLinksByGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CreateWebObjectLinksByGuidResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebObjectLinks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="primaryDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="linkDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="linkTypes" type="tns:ArrayOfWebObjectLinkType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebObjectLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CreateWebObjectLinksResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadOrCreateWebObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="lookupDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadOrCreateWebObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="lookupDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWebObjectLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="webObjectUid1" type="q11:guid" />
+        <xs:element xmlns:q12="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="webObjectUid2" type="q12:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWebObjectLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="DeleteWebObjectLinkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProjectWebObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q13:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProjectWebObjectsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="DeleteWebObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="webObjectUid" type="q14:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWebObjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadObjectLinkType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="object1" type="q15:guid" />
+        <xs:element xmlns:q16="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="object2" type="q16:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadObjectLinkTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ReadObjectLinkTypeResult" type="tns:WebObjectLinkType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

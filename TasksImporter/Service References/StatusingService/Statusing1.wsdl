@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/Statusing/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Statusing/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Imports">
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/office/project/server/webservices/Statusing/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd3" namespace="http://Microsoft.Office.Project.Interfaces/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusTransactionDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentDependenciesDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/office/project/server/webservices/SummaryTaskPathDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingTimephasedActualsDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd11" namespace="http://schemas.microsoft.com/office/project/server/webservices/DelegationDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd13" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentsDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd14" namespace="http://schemas.microsoft.com/office/project/server/webservices/AssnHistoryDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/office/project/server/webservices/ScheduleDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd16" namespace="http://schemas.microsoft.com/office/project/server/webservices/ImportTimesheetDataSet/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Statusing_DeleteStatusingInformationForProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStatusingInformationForProject" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusingInformationForProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStatusingInformationForProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusingInformationForProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q1:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusingInformationForProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q2:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsSubmitted_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusApprovalsSubmitted" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsSubmitted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusApprovalsSubmittedResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsSubmitted_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q3:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsSubmitted_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q4:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTransactionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTransactionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTransactionDetails_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q5:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTransactionDetails_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q6:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusApprovalDetails" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusApprovalDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalDetails_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q7:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalDetails_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q8:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatusApprovals_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusApprovals" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatusApprovals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusApprovalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatusApprovals_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q9:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatusApprovals_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q10:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueApplyStatusApprovals_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueApplyStatusApprovals" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueApplyStatusApprovals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueApplyStatusApprovalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueApplyStatusApprovals_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q11:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueApplyStatusApprovals_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q12:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsInProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusApprovalsInProcess" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsInProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusApprovalsInProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsInProcess_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q13:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusApprovalsInProcess_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q14:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusApprovalHistories_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStatusApprovalHistories" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusApprovalHistories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStatusApprovalHistoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusApprovalHistories_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q15:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DeleteStatusApprovalHistories_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q16:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatus_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q17:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_UpdateStatus_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q18:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitStatus" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatus_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q19:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatus_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q20:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SetAssignmentWorkData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetAssignmentWorkData" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SetAssignmentWorkData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetAssignmentWorkDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SetAssignmentWorkData_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q21:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SetAssignmentWorkData_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q22:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAssignment" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignment_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q23:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignment_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q24:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentDependencies_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentDependencies" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentDependencies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentDependenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentDependencies_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q25:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentDependencies_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q26:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadSummaryTaskPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSummaryTaskPath" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadSummaryTaskPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSummaryTaskPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadSummaryTaskPath_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q27:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadSummaryTaskPath_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q28:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatus" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatus_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q29:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatus_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q30:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTeamStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTeamStatus" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTeamStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTeamStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTeamStatus_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q31:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadTeamStatus_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q32:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusTimephasedData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusTimephasedData" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusTimephasedData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusTimephasedDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusTimephasedData_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q33:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusTimephasedData_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q34:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DelegateAssignments_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelegateAssignments" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DelegateAssignments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelegateAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DelegateAssignments_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q35:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_DelegateAssignments_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q36:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ImportTimesheet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTimesheet" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ImportTimesheet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTimesheetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ImportTimesheet_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q37:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ImportTimesheet_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q38:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueLockDownTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueLockDownTasks" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueLockDownTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueLockDownTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueLockDownTasks_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q39:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_QueueLockDownTasks_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q40:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignments_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignments" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignments_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q41:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignments_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q42:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadPublishedNoteForTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadPublishedNoteForTask" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadPublishedNoteForTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadPublishedNoteForTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadPublishedNoteForTask_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q43:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadPublishedNoteForTask_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q44:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentHistory_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q45:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentHistory_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q46:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadMySchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadMySchedule" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadMySchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadMyScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadMySchedule_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q47:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadMySchedule_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q48:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentsForDelegation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentsForDelegation" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentsForDelegation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAssignmentsForDelegationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentsForDelegation_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q49:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadAssignmentsForDelegation_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q50:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadImportTimesheetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadImportTimesheetData" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadImportTimesheetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadImportTimesheetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadImportTimesheetData_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q51:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadImportTimesheetData_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q52:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_GetNewTaskCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewTaskCount" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_GetNewTaskCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewTaskCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_GetNewTaskCount_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q53:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_GetNewTaskCount_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q54:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusForResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusForResource" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusForResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStatusForResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusForResource_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q55:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_ReadStatusForResource_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q56:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatusForResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitStatusForResource" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatusForResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitStatusForResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatusForResource_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q57:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_SubmitStatusForResource_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q58:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignmentWithWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAssignmentWithWork" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignmentWithWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAssignmentWithWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignmentWithWork_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q59:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Statusing_CreateNewAssignmentWithWork_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q60:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:portType name="Statusing">
+    <wsdl:operation name="DeleteStatusingInformationForProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/DeleteStatusingInformationForProject" message="tns:Statusing_DeleteStatusingInformationForProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/DeleteStatusingInformationForProjectResponse" message="tns:Statusing_DeleteStatusingInformationForProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/DeleteStatusingInformationForProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_DeleteStatusingInformationForProject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/DeleteStatusingInformationForProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_DeleteStatusingInformationForProject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStatusApprovalsSubmitted">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusApprovalsSubmitted" message="tns:Statusing_ReadStatusApprovalsSubmitted_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusApprovalsSubmittedResponse" message="tns:Statusing_ReadStatusApprovalsSubmitted_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusApprovalsSubmittedDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadStatusApprovalsSubmitted_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusApprovalsSubmittedServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadStatusApprovalsSubmitted_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTransactionDetails">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadTransactionDetails" message="tns:Statusing_ReadTransactionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadTransactionDetailsResponse" message="tns:Statusing_ReadTransactionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadTransactionDetailsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadTransactionDetails_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadTransactionDetailsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadTransactionDetails_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStatusApprovalDetails">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusApprovalDetails" message="tns:Statusing_ReadStatusApprovalDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusApprovalDetailsResponse" message="tns:Statusing_ReadStatusApprovalDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusApprovalDetailsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadStatusApprovalDetails_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusApprovalDetailsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadStatusApprovalDetails_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusApprovals">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/UpdateStatusApprovals" message="tns:Statusing_UpdateStatusApprovals_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/UpdateStatusApprovalsResponse" message="tns:Statusing_UpdateStatusApprovals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/UpdateStatusApprovalsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_UpdateStatusApprovals_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/UpdateStatusApprovalsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_UpdateStatusApprovals_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueApplyStatusApprovals">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/QueueApplyStatusApprovals" message="tns:Statusing_QueueApplyStatusApprovals_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/QueueApplyStatusApprovalsResponse" message="tns:Statusing_QueueApplyStatusApprovals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/QueueApplyStatusApprovalsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_QueueApplyStatusApprovals_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/QueueApplyStatusApprovalsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_QueueApplyStatusApprovals_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStatusApprovalsInProcess">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusApprovalsInProcess" message="tns:Statusing_ReadStatusApprovalsInProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusApprovalsInProcessResponse" message="tns:Statusing_ReadStatusApprovalsInProcess_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusApprovalsInProcessServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadStatusApprovalsInProcess_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusApprovalsInProcessDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadStatusApprovalsInProcess_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStatusApprovalHistories">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/DeleteStatusApprovalHistories" message="tns:Statusing_DeleteStatusApprovalHistories_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/DeleteStatusApprovalHistoriesResponse" message="tns:Statusing_DeleteStatusApprovalHistories_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/DeleteStatusApprovalHistoriesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_DeleteStatusApprovalHistories_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/DeleteStatusApprovalHistoriesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_DeleteStatusApprovalHistories_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/UpdateStatus" message="tns:Statusing_UpdateStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/UpdateStatusResponse" message="tns:Statusing_UpdateStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/UpdateStatusServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_UpdateStatus_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/UpdateStatusDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_UpdateStatus_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitStatus">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/SubmitStatus" message="tns:Statusing_SubmitStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/SubmitStatusResponse" message="tns:Statusing_SubmitStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/SubmitStatusDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_SubmitStatus_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/SubmitStatusServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_SubmitStatus_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAssignmentWorkData">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/SetAssignmentWorkData" message="tns:Statusing_SetAssignmentWorkData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/SetAssignmentWorkDataResponse" message="tns:Statusing_SetAssignmentWorkData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/SetAssignmentWorkDataServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_SetAssignmentWorkData_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/SetAssignmentWorkDataDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_SetAssignmentWorkData_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAssignment">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/CreateNewAssignment" message="tns:Statusing_CreateNewAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/CreateNewAssignmentResponse" message="tns:Statusing_CreateNewAssignment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/CreateNewAssignmentServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_CreateNewAssignment_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/CreateNewAssignmentDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_CreateNewAssignment_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAssignmentDependencies">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentDependencies" message="tns:Statusing_ReadAssignmentDependencies_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentDependenciesResponse" message="tns:Statusing_ReadAssignmentDependencies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentDependenciesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadAssignmentDependencies_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentDependenciesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadAssignmentDependencies_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSummaryTaskPath">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadSummaryTaskPath" message="tns:Statusing_ReadSummaryTaskPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadSummaryTaskPathResponse" message="tns:Statusing_ReadSummaryTaskPath_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadSummaryTaskPathDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadSummaryTaskPath_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadSummaryTaskPathServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadSummaryTaskPath_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStatus">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatus" message="tns:Statusing_ReadStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusResponse" message="tns:Statusing_ReadStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadStatus_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadStatus_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTeamStatus">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadTeamStatus" message="tns:Statusing_ReadTeamStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadTeamStatusResponse" message="tns:Statusing_ReadTeamStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadTeamStatusServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadTeamStatus_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadTeamStatusDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadTeamStatus_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStatusTimephasedData">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusTimephasedData" message="tns:Statusing_ReadStatusTimephasedData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusTimephasedDataResponse" message="tns:Statusing_ReadStatusTimephasedData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusTimephasedDataServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadStatusTimephasedData_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusTimephasedDataDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadStatusTimephasedData_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelegateAssignments">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/DelegateAssignments" message="tns:Statusing_DelegateAssignments_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/DelegateAssignmentsResponse" message="tns:Statusing_DelegateAssignments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/DelegateAssignmentsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_DelegateAssignments_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/DelegateAssignmentsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_DelegateAssignments_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTimesheet">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ImportTimesheet" message="tns:Statusing_ImportTimesheet_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ImportTimesheetResponse" message="tns:Statusing_ImportTimesheet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ImportTimesheetDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ImportTimesheet_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ImportTimesheetServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ImportTimesheet_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueLockDownTasks">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/QueueLockDownTasks" message="tns:Statusing_QueueLockDownTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/QueueLockDownTasksResponse" message="tns:Statusing_QueueLockDownTasks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/QueueLockDownTasksDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_QueueLockDownTasks_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/QueueLockDownTasksServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_QueueLockDownTasks_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAssignments">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignments" message="tns:Statusing_ReadAssignments_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentsResponse" message="tns:Statusing_ReadAssignments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadAssignments_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadAssignments_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadPublishedNoteForTask">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadPublishedNoteForTask" message="tns:Statusing_ReadPublishedNoteForTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadPublishedNoteForTaskResponse" message="tns:Statusing_ReadPublishedNoteForTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadPublishedNoteForTaskDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadPublishedNoteForTask_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadPublishedNoteForTaskServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadPublishedNoteForTask_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAssignmentHistory">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentHistory" message="tns:Statusing_ReadAssignmentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentHistoryResponse" message="tns:Statusing_ReadAssignmentHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentHistoryServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadAssignmentHistory_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentHistoryDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadAssignmentHistory_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadMySchedule">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadMySchedule" message="tns:Statusing_ReadMySchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadMyScheduleResponse" message="tns:Statusing_ReadMySchedule_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadMyScheduleDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadMySchedule_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadMyScheduleServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadMySchedule_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAssignmentsForDelegation">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentsForDelegation" message="tns:Statusing_ReadAssignmentsForDelegation_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadAssignmentsForDelegationResponse" message="tns:Statusing_ReadAssignmentsForDelegation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentsForDelegationServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadAssignmentsForDelegation_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadAssignmentsForDelegationDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadAssignmentsForDelegation_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadImportTimesheetData">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadImportTimesheetData" message="tns:Statusing_ReadImportTimesheetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadImportTimesheetDataResponse" message="tns:Statusing_ReadImportTimesheetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadImportTimesheetDataDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadImportTimesheetData_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadImportTimesheetDataServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadImportTimesheetData_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTaskCount">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/GetNewTaskCount" message="tns:Statusing_GetNewTaskCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/GetNewTaskCountResponse" message="tns:Statusing_GetNewTaskCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/GetNewTaskCountDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_GetNewTaskCount_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/GetNewTaskCountServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_GetNewTaskCount_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStatusForResource">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusForResource" message="tns:Statusing_ReadStatusForResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/ReadStatusForResourceResponse" message="tns:Statusing_ReadStatusForResource_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusForResourceDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_ReadStatusForResource_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/ReadStatusForResourceServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_ReadStatusForResource_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitStatusForResource">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/SubmitStatusForResource" message="tns:Statusing_SubmitStatusForResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/SubmitStatusForResourceResponse" message="tns:Statusing_SubmitStatusForResource_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/SubmitStatusForResourceDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_SubmitStatusForResource_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/SubmitStatusForResourceServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_SubmitStatusForResource_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAssignmentWithWork">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/CreateNewAssignmentWithWork" message="tns:Statusing_CreateNewAssignmentWithWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/CreateNewAssignmentWithWorkResponse" message="tns:Statusing_CreateNewAssignmentWithWork_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/CreateNewAssignmentWithWorkDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Statusing_CreateNewAssignmentWithWork_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Statusing/Statusing/CreateNewAssignmentWithWorkServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Statusing_CreateNewAssignmentWithWork_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

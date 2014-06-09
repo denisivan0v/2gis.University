@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomFields" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_CustomFields" type="i0:CustomFields">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckOutCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckOutCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckInCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByMdPropUids">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByEntity">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/DeleteCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomFields2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomFields2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFields2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByMdPropUids2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByEntity2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_CustomFields1" type="i0:CustomFields">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckOutCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckOutCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CheckInCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByMdPropUids">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByEntity">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomFields">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/DeleteCustomFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomFields2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/CreateCustomFields2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomFields2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/UpdateCustomFields2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFields2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFields2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByMdPropUids2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByMdPropUids2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCustomFieldsByEntity2">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/ReadCustomFieldsByEntity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomFields">
+    <wsdl:port name="BasicHttpBinding_CustomFields" binding="tns:BasicHttpBinding_CustomFields">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc/secure" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_CustomFields1" binding="tns:BasicHttpBinding_CustomFields1">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

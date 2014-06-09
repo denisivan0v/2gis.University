@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/Imports">
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd4" namespace="http://Microsoft.Office.Project.Interfaces/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ObjectLinkProvider_ReadLinkedWebObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLinkedWebObjects" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadLinkedWebObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLinkedWebObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadLinkedWebObjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q1:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadLinkedWebObjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q2:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectLinkedWebObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectLinkedWebObjects" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectLinkedWebObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectLinkedWebObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectLinkedWebObjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q3:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectLinkedWebObjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q4:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskLinkedWebObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTaskLinkedWebObjects" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskLinkedWebObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTaskLinkedWebObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskLinkedWebObjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q5:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskLinkedWebObjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q6:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSharePointItemLinkedWebObjects" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSharePointItemLinkedWebObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q7:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q8:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadWebObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadWebObject" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadWebObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadWebObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadWebObject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q9:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadWebObject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q10:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectWebObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectWebObject" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectWebObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectWebObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectWebObject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q11:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadProjectWebObject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q12:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskWebObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTaskWebObject" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskWebObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTaskWebObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskWebObject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q13:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadTaskWebObject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q14:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointWebObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSharePointWebObject" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointWebObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSharePointWebObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointWebObject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q15:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadSharePointWebObject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q16:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectByDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadObjectByDescription" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectByDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadObjectByDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectByDescription_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q17:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectByDescription_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q18:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinksByGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWebObjectLinksByGuid" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinksByGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWebObjectLinksByGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinksByGuid_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q19:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinksByGuid_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q20:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinks_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWebObjectLinks" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWebObjectLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinks_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q21:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_CreateWebObjectLinks_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q22:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadOrCreateWebObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadOrCreateWebObjects" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadOrCreateWebObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadOrCreateWebObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadOrCreateWebObjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q23:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadOrCreateWebObjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q24:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObjectLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWebObjectLink" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObjectLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWebObjectLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObjectLink_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q25:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObjectLink_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q26:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteProjectWebObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProjectWebObjects" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteProjectWebObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProjectWebObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteProjectWebObjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q27:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteProjectWebObjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q28:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWebObject" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWebObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q29:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_DeleteWebObject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q30:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectLinkType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadObjectLinkType" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectLinkType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadObjectLinkTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectLinkType_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q31:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="ObjectLinkProvider_ReadObjectLinkType_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q32:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:portType name="ObjectLinkProvider">
+    <wsdl:operation name="ReadLinkedWebObjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadLinkedWebObjects" message="tns:ObjectLinkProvider_ReadLinkedWebObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadLinkedWebObjectsResponse" message="tns:ObjectLinkProvider_ReadLinkedWebObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadLinkedWebObjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadLinkedWebObjects_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadLinkedWebObjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadLinkedWebObjects_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectLinkedWebObjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectLinkedWebObjects" message="tns:ObjectLinkProvider_ReadProjectLinkedWebObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectLinkedWebObjectsResponse" message="tns:ObjectLinkProvider_ReadProjectLinkedWebObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadProjectLinkedWebObjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadProjectLinkedWebObjects_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadProjectLinkedWebObjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadProjectLinkedWebObjects_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTaskLinkedWebObjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskLinkedWebObjects" message="tns:ObjectLinkProvider_ReadTaskLinkedWebObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskLinkedWebObjectsResponse" message="tns:ObjectLinkProvider_ReadTaskLinkedWebObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadTaskLinkedWebObjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadTaskLinkedWebObjects_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadTaskLinkedWebObjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadTaskLinkedWebObjects_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSharePointItemLinkedWebObjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointItemLinkedWebObjects" message="tns:ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointItemLinkedWebObjectsResponse" message="tns:ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadSharePointItemLinkedWebObjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadSharePointItemLinkedWebObjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadSharePointItemLinkedWebObjects_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadWebObject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadWebObject" message="tns:ObjectLinkProvider_ReadWebObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadWebObjectResponse" message="tns:ObjectLinkProvider_ReadWebObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadWebObjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadWebObject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadWebObjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadWebObject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectWebObject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectWebObject" message="tns:ObjectLinkProvider_ReadProjectWebObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectWebObjectResponse" message="tns:ObjectLinkProvider_ReadProjectWebObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadProjectWebObjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadProjectWebObject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadProjectWebObjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadProjectWebObject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTaskWebObject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskWebObject" message="tns:ObjectLinkProvider_ReadTaskWebObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskWebObjectResponse" message="tns:ObjectLinkProvider_ReadTaskWebObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadTaskWebObjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadTaskWebObject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadTaskWebObjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadTaskWebObject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSharePointWebObject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointWebObject" message="tns:ObjectLinkProvider_ReadSharePointWebObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointWebObjectResponse" message="tns:ObjectLinkProvider_ReadSharePointWebObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadSharePointWebObjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadSharePointWebObject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadSharePointWebObjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadSharePointWebObject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjectByDescription">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectByDescription" message="tns:ObjectLinkProvider_ReadObjectByDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectByDescriptionResponse" message="tns:ObjectLinkProvider_ReadObjectByDescription_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadObjectByDescriptionServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadObjectByDescription_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadObjectByDescriptionDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadObjectByDescription_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWebObjectLinksByGuid">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinksByGuid" message="tns:ObjectLinkProvider_CreateWebObjectLinksByGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinksByGuidResponse" message="tns:ObjectLinkProvider_CreateWebObjectLinksByGuid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/CreateWebObjectLinksByGuidDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_CreateWebObjectLinksByGuid_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/CreateWebObjectLinksByGuidServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_CreateWebObjectLinksByGuid_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWebObjectLinks">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinks" message="tns:ObjectLinkProvider_CreateWebObjectLinks_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinksResponse" message="tns:ObjectLinkProvider_CreateWebObjectLinks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/CreateWebObjectLinksServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_CreateWebObjectLinks_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/CreateWebObjectLinksDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_CreateWebObjectLinks_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadOrCreateWebObjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadOrCreateWebObjects" message="tns:ObjectLinkProvider_ReadOrCreateWebObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadOrCreateWebObjectsResponse" message="tns:ObjectLinkProvider_ReadOrCreateWebObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadOrCreateWebObjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadOrCreateWebObjects_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadOrCreateWebObjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadOrCreateWebObjects_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebObjectLink">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObjectLink" message="tns:ObjectLinkProvider_DeleteWebObjectLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObjectLinkResponse" message="tns:ObjectLinkProvider_DeleteWebObjectLink_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/DeleteWebObjectLinkServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_DeleteWebObjectLink_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/DeleteWebObjectLinkDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_DeleteWebObjectLink_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectWebObjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteProjectWebObjects" message="tns:ObjectLinkProvider_DeleteProjectWebObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteProjectWebObjectsResponse" message="tns:ObjectLinkProvider_DeleteProjectWebObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/DeleteProjectWebObjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_DeleteProjectWebObjects_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/DeleteProjectWebObjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_DeleteProjectWebObjects_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebObject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObject" message="tns:ObjectLinkProvider_DeleteWebObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObjectResponse" message="tns:ObjectLinkProvider_DeleteWebObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/DeleteWebObjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_DeleteWebObject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/DeleteWebObjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_DeleteWebObject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjectLinkType">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectLinkType" message="tns:ObjectLinkProvider_ReadObjectLinkType_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectLinkTypeResponse" message="tns:ObjectLinkProvider_ReadObjectLinkType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadObjectLinkTypeServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:ObjectLinkProvider_ReadObjectLinkType_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ObjectLinkProvider/ReadObjectLinkTypeDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:ObjectLinkProvider_ReadObjectLinkType_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

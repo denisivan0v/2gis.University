@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d0e42d12-e49d-4370-83df-225253c5c0fb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LookupTableMultiLangDataSet.xsd" MetadataType="Schema" ID="ecc7005a-f45d-4a10-967c-e037f40b6624" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd4" />
+    <MetadataFile FileName="LookupTableDataSet.xsd" MetadataType="Schema" ID="eab48179-2899-45d0-b3d4-927d9592706e" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd5" />
+    <MetadataFile FileName="LookupTable.wsdl" MetadataType="Wsdl" ID="a15da155-4a13-4d14-9b37-bed86c757603" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?wsdl" />
+    <MetadataFile FileName="LookupTable.xsd" MetadataType="Schema" ID="5b22f14e-598a-453f-bb55-439513c938c7" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd3" />
+    <MetadataFile FileName="LookupTable.disco" MetadataType="Disco" ID="1be31cd9-35fe-49e5-8bf6-aa10e8171776" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?disco" />
+    <MetadataFile FileName="LookupTable1.xsd" MetadataType="Schema" ID="c4a04fa2-96e8-4ddd-b9fd-11bf3081efcc" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd1" />
+    <MetadataFile FileName="LookupTable1.wsdl" MetadataType="Wsdl" ID="4b38cb2e-8682-4aa1-99e5-af014a9553d6" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="LookupTable2.xsd" MetadataType="Schema" ID="ee5e1665-faac-45d4-99b0-d95534727fb9" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd2" />
+    <MetadataFile FileName="LookupTable3.xsd" MetadataType="Schema" ID="c41f81a1-982b-4cdd-baf0-fffad5ccb0aa" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

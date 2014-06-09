@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/ScheduleDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/ScheduleDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ScheduleDataSet/" id="ScheduleDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="ScheduleDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Schedule">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PrimaryID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SecondaryID" type="xs:string" />
+              <xs:element minOccurs="0" name="Title">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Finish" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Category" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Schedule" />
+      <xs:field xpath="mstns:PrimaryID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

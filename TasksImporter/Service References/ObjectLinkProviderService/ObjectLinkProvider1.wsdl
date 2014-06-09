@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ObjectLinkProvider" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/" location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_ObjectLinkProvider" type="i0:ObjectLinkProvider">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTaskLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSharePointItemLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointItemLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTaskWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSharePointWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjectByDescription">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectByDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWebObjectLinksByGuid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinksByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWebObjectLinks">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadOrCreateWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadOrCreateWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebObjectLink">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObjectLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteProjectWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjectLinkType">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectLinkType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ObjectLinkProvider1" type="i0:ObjectLinkProvider">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTaskLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSharePointItemLinkedWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointItemLinkedWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadProjectWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTaskWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadTaskWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSharePointWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadSharePointWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjectByDescription">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectByDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWebObjectLinksByGuid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinksByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWebObjectLinks">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/CreateWebObjectLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadOrCreateWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadOrCreateWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebObjectLink">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObjectLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectWebObjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteProjectWebObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebObject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/DeleteWebObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjectLinkType">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProvider/ReadObjectLinkType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ObjectLinkProvider">
+    <wsdl:port name="BasicHttpBinding_ObjectLinkProvider" binding="tns:BasicHttpBinding_ObjectLinkProvider">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc/secure" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ObjectLinkProvider1" binding="tns:BasicHttpBinding_ObjectLinkProvider1">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

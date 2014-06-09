@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/Resource/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Resource/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Resource/Imports">
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/office/project/server/webservices/Resource/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd3" namespace="http://Microsoft.Office.Project.Interfaces/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd4" namespace="http://microsoft.com/wsdl/types/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAssignmentDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAuthorizationDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/office/project/server/webservices/UserDelegationDataSet/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Resource_ReadResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q1:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q2:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailabilityForGrid_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAvailabilityForGrid" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailabilityForGrid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAvailabilityForGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailabilityForGrid_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q3:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailabilityForGrid_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q4:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAssignments_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAssignments" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAssignments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAssignments_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q5:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAssignments_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q6:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetResourceUids_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceUids" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetResourceUids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceUidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetResourceUids_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q7:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetResourceUids_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q8:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q9:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q10:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q11:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q12:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q13:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q14:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckOutResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckOutResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckOutResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q15:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckOutResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q16:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckInResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckInResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckInResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q17:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CheckInResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q18:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadUserList" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadUserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadUserList_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q19:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadUserList_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q20:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceListByDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceListByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceListByDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceListByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceListByDepartment_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q21:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceListByDepartment_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q22:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetCurrentUserUid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserUid" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetCurrentUserUid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserUidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetCurrentUserUid_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q23:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_GetCurrentUserUid_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q24:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAuthorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAuthorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAuthorization_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q25:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAuthorization_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q26:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResource" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResource_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q27:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResource_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q28:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_SetResourceAuthorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetResourceAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="Resource_SetResourceAuthorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetResourceAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_SetResourceAuthorization_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q29:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_SetResourceAuthorization_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q30:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ActivateResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ActivateResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ActivateResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q31:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ActivateResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q32:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeactivateResources_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateResources" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeactivateResources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeactivateResources_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q33:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeactivateResources_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q34:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAvailability" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResourceAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailability_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q35:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadResourceAvailability_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q36:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDelegation" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDelegationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegation_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q37:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegation_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q38:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegations_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDelegations" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDelegationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegations_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q39:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_ReadDelegations_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q40:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteDelegations_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDelegations" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteDelegations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDelegationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteDelegations_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q41:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_DeleteDelegations_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q42:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateDelegations_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDelegations" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateDelegations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDelegationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateDelegations_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q43:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_UpdateDelegations_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q44:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateDelegations_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDelegations" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateDelegations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDelegationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateDelegations_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q45:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Resource_CreateDelegations_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q46:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:portType name="Resource">
+    <wsdl:operation name="ReadResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResources" message="tns:Resource_ReadResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourcesResponse" message="tns:Resource_ReadResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResources_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResources_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAvailabilityForGrid">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailabilityForGrid" message="tns:Resource_ReadResourceAvailabilityForGrid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailabilityForGridResponse" message="tns:Resource_ReadResourceAvailabilityForGrid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAvailabilityForGridDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResourceAvailabilityForGrid_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAvailabilityForGridServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResourceAvailabilityForGrid_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAssignments">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAssignments" message="tns:Resource_ReadResourceAssignments_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAssignmentsResponse" message="tns:Resource_ReadResourceAssignments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAssignmentsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResourceAssignments_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAssignmentsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResourceAssignments_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceUids">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetResourceUids" message="tns:Resource_GetResourceUids_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetResourceUidsResponse" message="tns:Resource_GetResourceUids_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/GetResourceUidsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_GetResourceUids_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/GetResourceUidsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_GetResourceUids_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateResources" message="tns:Resource_CreateResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateResourcesResponse" message="tns:Resource_CreateResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CreateResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_CreateResources_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CreateResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_CreateResources_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateResources" message="tns:Resource_UpdateResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateResourcesResponse" message="tns:Resource_UpdateResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/UpdateResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_UpdateResources_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/UpdateResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_UpdateResources_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteResources" message="tns:Resource_DeleteResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteResourcesResponse" message="tns:Resource_DeleteResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/DeleteResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_DeleteResources_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/DeleteResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_DeleteResources_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckOutResources" message="tns:Resource_CheckOutResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckOutResourcesResponse" message="tns:Resource_CheckOutResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CheckOutResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_CheckOutResources_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CheckOutResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_CheckOutResources_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckInResources" message="tns:Resource_CheckInResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckInResourcesResponse" message="tns:Resource_CheckInResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CheckInResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_CheckInResources_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CheckInResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_CheckInResources_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserList">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadUserList" message="tns:Resource_ReadUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadUserListResponse" message="tns:Resource_ReadUserList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadUserListDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadUserList_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadUserListServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadUserList_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceListByDepartment">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceListByDepartment" message="tns:Resource_ReadResourceListByDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceListByDepartmentResponse" message="tns:Resource_ReadResourceListByDepartment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceListByDepartmentServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResourceListByDepartment_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceListByDepartmentDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResourceListByDepartment_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUserUid">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetCurrentUserUid" message="tns:Resource_GetCurrentUserUid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetCurrentUserUidResponse" message="tns:Resource_GetCurrentUserUid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/GetCurrentUserUidServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_GetCurrentUserUid_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/GetCurrentUserUidDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_GetCurrentUserUid_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAuthorization">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAuthorization" message="tns:Resource_ReadResourceAuthorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAuthorizationResponse" message="tns:Resource_ReadResourceAuthorization_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAuthorizationDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResourceAuthorization_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAuthorizationServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResourceAuthorization_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResource">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResource" message="tns:Resource_ReadResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceResponse" message="tns:Resource_ReadResource_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResource_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResource_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetResourceAuthorization">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/SetResourceAuthorization" message="tns:Resource_SetResourceAuthorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/SetResourceAuthorizationResponse" message="tns:Resource_SetResourceAuthorization_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/SetResourceAuthorizationServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_SetResourceAuthorization_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/SetResourceAuthorizationDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_SetResourceAuthorization_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ActivateResources" message="tns:Resource_ActivateResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ActivateResourcesResponse" message="tns:Resource_ActivateResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ActivateResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ActivateResources_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ActivateResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ActivateResources_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateResources">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeactivateResources" message="tns:Resource_DeactivateResources_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeactivateResourcesResponse" message="tns:Resource_DeactivateResources_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/DeactivateResourcesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_DeactivateResources_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/DeactivateResourcesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_DeactivateResources_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAvailability">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailability" message="tns:Resource_ReadResourceAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailabilityResponse" message="tns:Resource_ReadResourceAvailability_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAvailabilityServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadResourceAvailability_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadResourceAvailabilityDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadResourceAvailability_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadDelegation">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegation" message="tns:Resource_ReadDelegation_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegationResponse" message="tns:Resource_ReadDelegation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadDelegationServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadDelegation_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadDelegationDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadDelegation_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadDelegations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegations" message="tns:Resource_ReadDelegations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegationsResponse" message="tns:Resource_ReadDelegations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadDelegationsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_ReadDelegations_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/ReadDelegationsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_ReadDelegations_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDelegations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteDelegations" message="tns:Resource_DeleteDelegations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteDelegationsResponse" message="tns:Resource_DeleteDelegations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/DeleteDelegationsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_DeleteDelegations_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/DeleteDelegationsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_DeleteDelegations_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelegations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateDelegations" message="tns:Resource_UpdateDelegations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateDelegationsResponse" message="tns:Resource_UpdateDelegations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/UpdateDelegationsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_UpdateDelegations_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/UpdateDelegationsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_UpdateDelegations_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDelegations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateDelegations" message="tns:Resource_CreateDelegations_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateDelegationsResponse" message="tns:Resource_CreateDelegations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CreateDelegationsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Resource_CreateDelegations_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Resource/Resource/CreateDelegationsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Resource_CreateDelegations_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

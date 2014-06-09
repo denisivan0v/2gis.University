@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Microsoft.Office.Project.Interfaces/" elementFormDefault="qualified" targetNamespace="http://Microsoft.Office.Project.Interfaces/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DefaultServerFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServerFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefaultServerFault" nillable="true" type="tns:DefaultServerFault" />
+  <xs:complexType name="ServerFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastError" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetSite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerFault" nillable="true" type="tns:ServerFault" />
+  <xs:complexType name="ServerExecutionFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DefaultServerFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExceptionDetails" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServerExecutionFault" nillable="true" type="tns:ServerExecutionFault" />
+</xs:schema>

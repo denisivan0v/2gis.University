@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" id="LookupTableMultiLangDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="LookupTableMultiLangDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LookupTables">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_UID" type="xs:string" />
+              <xs:element name="LT_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="LT_SORT_ORDER_ENUM" type="xs:unsignedByte" />
+              <xs:element name="LT_PRIMARY_LCID" type="xs:int" />
+              <xs:element minOccurs="0" default="false" name="LT_FILL_ALL_LEVELS" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="LT_CHECKOUTBY" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="LT_CHECKOUTDATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LookupTableMaskStructures">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_UID" type="xs:string" />
+              <xs:element name="LT_MASK_STRUCT_LEVEL" type="xs:int" />
+              <xs:element minOccurs="0" name="LT_MASK_STRUCT_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" default="0" name="LT_MASK_STRUCT_LENGTH" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LookupTableMaskValues">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_UID" type="xs:string" />
+              <xs:element minOccurs="0" default="" name="LT_MASK_VALUE_SEPARATOR" type="xs:string" />
+              <xs:element name="LT_MASK_STRUCT_LEVEL" type="xs:int" />
+              <xs:element name="LCID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LookupTableStructures">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_STRUCT_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="LT_PARENT_STRUCT_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="LT_STRUCT_COOKIE" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LookupTableValues">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_STRUCT_UID" type="xs:string" />
+              <xs:element name="LCID" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="LT_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="LT_VALUE_DUR" type="xs:int" />
+              <xs:element minOccurs="0" name="LT_VALUE_NUM" type="xs:decimal" />
+              <xs:element minOccurs="0" name="LT_VALUE_DUR_FMT" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="LT_VALUE_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="LT_VALUE_TEXT" type="xs:string" />
+              <xs:element minOccurs="0" name="LT_VALUE_DEFAULT_WEIGHT" type="xs:double" />
+              <xs:element minOccurs="0" name="LT_VALUE_DEFAULT_BACK_COLOR" type="xs:int" />
+              <xs:element minOccurs="0" name="LT_VALUE_DEFAULT_FORE_COLOR" type="xs:int" />
+              <xs:element minOccurs="0" name="LT_VALUE_PHONETIC" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="LT_VALUE_FULL" type="xs:string" />
+              <xs:element minOccurs="0" name="LT_VALUE_DESC" type="xs:string" />
+              <xs:element minOccurs="0" name="LT_VALUE_SORT_INDEX" type="xs:decimal" />
+              <xs:element minOccurs="0" name="LT_VALUE_LOCALIZED_COOKIE" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LookupTableLanguages">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LT_UID" type="xs:string" />
+              <xs:element name="LCID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="LookupTableMultiLangDataSetKey1">
+      <xs:selector xpath=".//mstns:LookupTables" />
+      <xs:field xpath="mstns:LT_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="LookupTableMultiLangDataSetKey2">
+      <xs:selector xpath=".//mstns:LookupTableMaskStructures" />
+      <xs:field xpath="mstns:LT_UID" />
+      <xs:field xpath="mstns:LT_MASK_STRUCT_LEVEL" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="LookupTableMultiLangDataSetKey3">
+      <xs:selector xpath=".//mstns:LookupTableMaskValues" />
+      <xs:field xpath="mstns:LT_UID" />
+      <xs:field xpath="mstns:LT_MASK_STRUCT_LEVEL" />
+      <xs:field xpath="mstns:LCID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="LookupTableMultiLangDataSetKey4">
+      <xs:selector xpath=".//mstns:LookupTableStructures" />
+      <xs:field xpath="mstns:LT_STRUCT_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="LookupTableMultiLangDataSetKey5">
+      <xs:selector xpath=".//mstns:LookupTableValues" />
+      <xs:field xpath="mstns:LT_STRUCT_UID" />
+      <xs:field xpath="mstns:LCID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="LookupTableMultiLangDataSetKey6">
+      <xs:selector xpath=".//mstns:LookupTableLanguages" />
+      <xs:field xpath="mstns:LT_UID" />
+      <xs:field xpath="mstns:LCID" />
+    </xs:unique>
+    <xs:keyref name="LookupTablesLookupTableLanguages" refer="mstns:LookupTableMultiLangDataSetKey1">
+      <xs:selector xpath=".//mstns:LookupTableLanguages" />
+      <xs:field xpath="mstns:LT_UID" />
+    </xs:keyref>
+    <xs:keyref name="LookupTableStructuresLookupTableValues" refer="mstns:LookupTableMultiLangDataSetKey4">
+      <xs:selector xpath=".//mstns:LookupTableValues" />
+      <xs:field xpath="mstns:LT_STRUCT_UID" />
+    </xs:keyref>
+    <xs:keyref name="LookupTableStructuresLookupTableStructures" refer="mstns:LookupTableMultiLangDataSetKey4">
+      <xs:selector xpath=".//mstns:LookupTableStructures" />
+      <xs:field xpath="mstns:LT_PARENT_STRUCT_UID" />
+    </xs:keyref>
+    <xs:keyref name="LookupTablesLookupTableStructures" refer="mstns:LookupTableMultiLangDataSetKey1">
+      <xs:selector xpath=".//mstns:LookupTableStructures" />
+      <xs:field xpath="mstns:LT_UID" />
+    </xs:keyref>
+    <xs:keyref name="LookupTableMaskStructuresLookupTableMaskValues" refer="mstns:LookupTableMultiLangDataSetKey2">
+      <xs:selector xpath=".//mstns:LookupTableMaskValues" />
+      <xs:field xpath="mstns:LT_UID" />
+      <xs:field xpath="mstns:LT_MASK_STRUCT_LEVEL" />
+    </xs:keyref>
+    <xs:keyref name="LookupTablesLookupTableMaskStructures" refer="mstns:LookupTableMultiLangDataSetKey1">
+      <xs:selector xpath=".//mstns:LookupTableMaskStructures" />
+      <xs:field xpath="mstns:LT_UID" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

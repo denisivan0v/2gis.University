@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" id="CustomFieldDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="CustomFieldDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID_SECONDARY" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID_SECONDARY" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="MD_ENT_TYPE_UID" type="xs:string" />
+              <xs:element name="MD_PROP_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_LOOKUP_TABLE_UID" type="xs:string" />
+              <xs:element minOccurs="0" default="false" name="MD_PROP_IS_WORKFLOW_CONTROLLED" type="xs:boolean" />
+              <xs:element minOccurs="0" default="false" name="MD_PROP_IS_REQUIRED" type="xs:boolean" />
+              <xs:element minOccurs="0" name="MD_AGGREGATION_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element name="MD_PROP_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_DEFAULT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_IS_LEAF_NODE_ONLY" type="xs:boolean" />
+              <xs:element minOccurs="0" default="false" name="MD_PROP_IS_MULTILINE_TEXT" type="xs:boolean" />
+              <xs:element minOccurs="0" name="MD_PROP_DESCRIPTION" type="xs:string" />
+              <xs:element minOccurs="0" default="1" name="MD_PROP_MAX_VALUES" type="xs:int" />
+              <xs:element minOccurs="0" name="MD_PROP_USE_FOR_MATCHING" type="xs:boolean" />
+              <xs:element minOccurs="0" name="MD_PROP_FORMULA" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_GRAPHICAL_INDICATOR" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_SUMM_GRAPHICAL_INDICATOR" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_PROJ_SUMM_GRAPHICAL_INDICATOR" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_GRAPHICAL_INDICATOR_TOOLTIP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="MD_PROP_ROLLDOWN_TO_ASSN" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_DEPARTMENT_UID" type="xs:string" />
+              <xs:element minOccurs="0" default="false" name="MD_PROP_COPY_ON_REASSIGNMENT" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="MD_PROP_CHECKOUTBY" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MD_PROP_CHECKOUTDATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="CustomFieldDataSetKey1">
+      <xs:selector xpath=".//mstns:CustomFields" />
+      <xs:field xpath="mstns:MD_PROP_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

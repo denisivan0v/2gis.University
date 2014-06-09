@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/Resource/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Resource/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd4" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAssignmentDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAuthorizationDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/office/project/server/webservices/UserDelegationDataSet/" />
+  <xs:element name="ReadResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xmlFilter" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourcesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceAvailabilityForGrid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="resUIDs" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="timeScale" type="xs:short" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includeProposedBookings" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q1:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReadResourceAvailabilityForGridResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourceAvailabilityForGridResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceAssignments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="filter" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceAssignmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourceAssignmentsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAssignmentDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceUids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="resIDs" type="tns:ArrayOfInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfInt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetResourceUidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetResourceUidsResult" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="rds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateResourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CreateResourcesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="rds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="UpdateResourcesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="arrayRes" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="deletionComment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResourcesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CheckOutResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="array" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutResourcesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CheckInResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="array" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="force" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInResourcesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadUserList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="filter" type="tns:ResourceActiveFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ResourceActiveFilter">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadUserListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadUserListResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceListByDepartment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="departmentUid" nillable="true" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceListByDepartmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourceListByDepartmentResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserUid">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetCurrentUserUidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="GetCurrentUserUidResult" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="resourceUid" type="q4:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceAuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourceAuthorizationResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAuthorizationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="resourceUid" type="q5:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourceResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetResourceAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="users">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAuthorizationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetResourceAuthorizationResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ActivateResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="resourceGuids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateResourcesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="DeactivateResources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="resourceGuids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateResourcesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadResourceAvailability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="resUIDs" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="timeScale" type="xs:short" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includeProposedBookings" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadResourceAvailabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadResourceAvailabilityResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDelegation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="delegationUid" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDelegationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadDelegationResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/UserDelegationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDelegations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="filter" type="tns:DelegationFilter" />
+        <xs:element xmlns:q7="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="resUid" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="DelegationFilter">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ActingAsUser" />
+      <xs:enumeration value="ForUser" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadDelegationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadDelegationsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/UserDelegationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDelegations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="delegationsUids" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDelegationsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UpdateDelegations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/UserDelegationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDelegationsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CreateDelegations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/UserDelegationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDelegationsResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

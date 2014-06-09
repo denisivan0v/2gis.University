@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/Project/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Project/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectContextDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectRelationsDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectImpactDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncErrorsDataSet" />
+  <xs:element name="CheckOutProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q1:guid" />
+        <xs:element xmlns:q2="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q2:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sessionDescription" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueCheckInProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q3:guid" />
+        <xs:element xmlns:q4="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q4:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="force" type="xs:boolean" />
+        <xs:element xmlns:q5="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q5:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sessionDescription" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueCheckInProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueCreateProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q6:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dataset">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueCreateProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueCreateProjectAndCheckOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q7:guid" />
+        <xs:element xmlns:q8="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q8:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sessionDescription" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dataset">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueCreateProjectAndCheckOutResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueAddToProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q9:guid" />
+        <xs:element xmlns:q10="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q10:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dataset">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueAddToProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CreateProjectFromTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="templateUid" type="q11:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projectName" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProjectFromTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="CreateProjectFromTemplateResult" type="q12:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueDeleteProjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q13:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="deleteWSS" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projectUids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="deleteBoth" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q14:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueDeleteProjectsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueRenameProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q15:guid" />
+        <xs:element xmlns:q16="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q16:guid" />
+        <xs:element xmlns:q17="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q17:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueRenameProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q18:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dataStore" type="tns:DataStoreEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="DataStoreEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WorkingStore" />
+      <xs:enumeration value="PublishedStore" />
+      <xs:enumeration value="VersionsStore" />
+      <xs:enumeration value="ReportingStore" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadProjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q19:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ProjectEntityType" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dataStore" type="tns:DataStoreEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectEntitiesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpdateProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q20:guid" />
+        <xs:element xmlns:q21="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q21:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dataset">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpdateProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueDeleteFromProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q22:guid" />
+        <xs:element xmlns:q23="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q23:guid" />
+        <xs:element xmlns:q24="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q24:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projectEntityUids" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueDeleteFromProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProjectTeam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q25:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectTeamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectTeamResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpdateProjectTeam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="JobUid" type="q26:guid" />
+        <xs:element xmlns:q27="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q27:guid" />
+        <xs:element xmlns:q28="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q28:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dataset">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpdateProjectTeamResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadSchedulingContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="projectUids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="resourceUids" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSchedulingContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadSchedulingContextResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectContextDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectNameFromProjectUid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q29:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dataStore" type="tns:DataStoreEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProjectNameFromProjectUidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetProjectNameFromProjectUidResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadServerListSeparator">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadServerListSeparatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="ReadServerListSeparatorResult" type="q30:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projGuid" type="q31:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dataStore" type="tns:DataStoreEnum" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projName" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="projType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectStatusResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueuePublish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q32:guid" />
+        <xs:element xmlns:q33="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q33:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fullPublish" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="WssURL" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueuePublishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="QueuePublishResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectRelationsDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueuePublishSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q34:guid" />
+        <xs:element xmlns:q35="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q35:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueuePublishSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="QueuePublishSummaryResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectRelationsDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpgradeProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUID" type="q36:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpgradeProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueCreateProposalProjectAndCheckout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q37:guid" />
+        <xs:element xmlns:q38="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q38:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sessionDescription" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projDS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="publishProject" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueCreateProposalProjectAndCheckoutResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CreateOperationsWorkFromWssList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q39:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="listDataXml" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="priorityMappingsXml" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projectName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projectDescription" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="titleFieldName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="startDateFieldName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="finishDateFieldName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="taskPriorityFieldName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="percentCompleteFieldName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="resourceFieldName" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includeWorkflow" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOperationsWorkFromWssListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="CreateOperationsWorkFromWssListResult" type="q40:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProjectWorkspaceAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q41:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="newWebName" type="xs:string" />
+        <xs:element xmlns:q42="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="newWSSServerUID" type="q42:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProjectWorkspaceAddressResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProjectList">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProjectListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectListResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectListByDepartment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="departmentUid" nillable="true" type="q43:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectListByDepartmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectListByDepartmentResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueSynchronizeProjectWorkspace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q44:guid" />
+        <xs:element xmlns:q45="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q45:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="forceFullSync" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueSynchronizeProjectWorkspaceResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProjectImpacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projectUid" type="q46:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="store" type="tns:DataStoreEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectImpactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectImpactsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectImpactDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpdateProjectImpacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q47:guid" />
+        <xs:element xmlns:q48="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sessionUid" type="q48:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="projectImpactDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectImpactDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueUpdateProjectImpactsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CreateWssListSyncedProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="syncDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="projectName" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWssListSyncedProjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="CreateWssListSyncedProjectResult" type="q49:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncProjectWithWss">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="syncEntityUid" type="q50:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="syncEntityUidType" type="tns:SyncEntityUidType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="SyncEntityUidType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ProjectUid" />
+      <xs:enumeration value="WssListUid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SyncProjectWithWssResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProjectSyncSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="syncEntityUids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="syncEntityUidType" type="tns:SyncEntityUidType" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includeMappingData" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectSyncSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectSyncSettingsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProjectSyncSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="syncDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProjectSyncSettingsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadProjectSyncErrorInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="wssListUid" type="q51:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadProjectSyncErrorInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadProjectSyncErrorInfoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncErrorsDataSet" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

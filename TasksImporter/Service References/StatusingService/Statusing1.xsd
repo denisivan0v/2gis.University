@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/Statusing/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Statusing/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusTransactionDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentDependenciesDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/office/project/server/webservices/SummaryTaskPathDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingTimephasedActualsDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd11" namespace="http://schemas.microsoft.com/office/project/server/webservices/DelegationDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd13" namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentsDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd14" namespace="http://schemas.microsoft.com/office/project/server/webservices/AssnHistoryDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/office/project/server/webservices/ScheduleDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd16" namespace="http://schemas.microsoft.com/office/project/server/webservices/ImportTimesheetDataSet/" />
+  <xs:element name="DeleteStatusingInformationForProject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="projectID" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="minDate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="maxDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q1:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteStatusingInformationForProjectResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadStatusApprovalsSubmitted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="includeTasks" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusApprovalsSubmittedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadStatusApprovalsSubmittedResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTransactionDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="updateID" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTransactionDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadTransactionDetailsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusApprovalDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="assignmentID" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusApprovalDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadStatusApprovalDetailsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateStatusApprovals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="dataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateStatusApprovalsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueApplyStatusApprovals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobID" type="q4:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueApplyStatusApprovalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="QueueApplyStatusApprovalsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusTransactionDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusApprovalsInProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="userID" type="q5:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusApprovalsInProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadStatusApprovalsInProcessResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteStatusApprovalHistories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="historyUids" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteStatusApprovalHistoriesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UpdateStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="changexml" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateStatusResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="SubmitStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="updateGuids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitStatusResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="SetAssignmentWorkData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="changeXML" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAssignmentWorkDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="SetAssignmentWorkDataResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="sName" type="xs:string" />
+        <xs:element xmlns:q6="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projGuid" type="q6:guid" />
+        <xs:element xmlns:q7="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="taskGuid" type="q7:guid" />
+        <xs:element xmlns:q8="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="assnGuid" type="q8:guid" />
+        <xs:element xmlns:q9="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sumTaskGuid" type="q9:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dtFinish" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fAddToTimesheet" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fSubmit" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sComment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewAssignmentResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadAssignmentDependencies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="p0" type="q10:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAssignmentDependenciesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadAssignmentDependenciesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentDependenciesDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSummaryTaskPath">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="p0" type="q11:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSummaryTaskPathResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadSummaryTaskPathResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/SummaryTaskPathDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="assnid" type="q12:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="mindate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="maxdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadStatusResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTeamStatus">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadTeamStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadTeamStatusResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusTimephasedData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projid" type="q13:guid" />
+        <xs:element xmlns:q14="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="assnid" type="q14:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="end" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="intervalInMinutes" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusTimephasedDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadStatusTimephasedDataResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingTimephasedActualsDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelegateAssignments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="assignmentDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/DelegationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelegateAssignmentsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ImportTimesheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="periodUID" type="q15:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportTimesheetResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="QueueLockDownTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="jobUid" type="q16:guid" />
+        <xs:element xmlns:q17="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projguid" type="q17:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="delta">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueLockDownTasksResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadAssignments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="assnUIDs" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAssignmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadAssignmentsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentsDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPublishedNoteForTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="taskid" type="q18:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPublishedNoteForTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadPublishedNoteForTaskResult" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAssignmentHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="itemid" type="q19:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="itemtype" type="tns:AssnHistoryItemType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="AssnHistoryItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Assignment" />
+      <xs:enumeration value="SingleTransaction" />
+      <xs:enumeration value="Task" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadAssignmentHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadAssignmentHistoryResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/AssnHistoryDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMySchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="finish" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMyScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadMyScheduleResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ScheduleDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAssignmentsForDelegation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="filter" type="tns:DelegationFilterType" />
+        <xs:element xmlns:q20="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="filterParameter" type="q20:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="DelegationFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SingleAssignment" />
+      <xs:enumeration value="Project" />
+      <xs:enumeration value="TeamResource" />
+      <xs:enumeration value="MyAssignments" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadAssignmentsForDelegationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadAssignmentsForDelegationResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/DelegationDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadImportTimesheetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="periodUID" type="q21:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadImportTimesheetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadImportTimesheetDataResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/ImportTimesheetDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewTaskCount">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetNewTaskCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="GetNewTaskCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusForResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="resid" type="q22:guid" />
+        <xs:element xmlns:q23="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="assnid" type="q23:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="mindate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="maxdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStatusForResourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadStatusForResourceResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitStatusForResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="resid" type="q24:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="updateGuids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitStatusForResourceResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CreateNewAssignmentWithWork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="sName" type="xs:string" />
+        <xs:element xmlns:q25="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="projGuid" type="q25:guid" />
+        <xs:element xmlns:q26="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="taskGuid" type="q26:guid" />
+        <xs:element xmlns:q27="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="assnGuid" type="q27:guid" />
+        <xs:element xmlns:q28="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="sumTaskGuid" type="q28:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dtFinish" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="actWork" type="xs:double" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fMilestone" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fAddToTimesheet" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fSubmit" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sComment" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewAssignmentWithWorkResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalTransactionDetailsDataSet/" id="StatusApprovalTransactionDetailsDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="StatusApprovalTransactionDetailsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StatusApprovalTransactionDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="COLUMN_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CHANGE_VALUE" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CHANGE_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CHANGE_END" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="StatusApprovalTransactionDetailsDataSetKey1">
+      <xs:selector xpath=".//mstns:StatusApprovalTransactionDetails" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

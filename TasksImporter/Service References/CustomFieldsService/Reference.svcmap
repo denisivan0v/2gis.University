@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="da887bad-633f-467d-b267-f090be3b22b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CustomFields.xsd" MetadataType="Schema" ID="68c1c9c4-248b-4cc1-ab01-49885d778b8c" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd2" />
+    <MetadataFile FileName="CustomFields.wsdl" MetadataType="Wsdl" ID="b4cfb741-87d8-4079-ac0d-6724676d8049" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CustomFields.disco" MetadataType="Disco" ID="8ab38778-aeb2-4a28-a1f9-6a8e1224bf39" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?disco" />
+    <MetadataFile FileName="CustomFields1.xsd" MetadataType="Schema" ID="2232a2d2-ac29-402a-9704-3b34db84ba4c" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomFields2.xsd" MetadataType="Schema" ID="e2aad19f-4ff5-49a8-b07c-2afaa2577a29" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomFieldDataSet.xsd" MetadataType="Schema" ID="64c9e64e-8068-4d26-9abd-5e095b8ffcdb" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomFields1.wsdl" MetadataType="Wsdl" ID="de88b895-6746-4a93-897a-5533ce5ce7e5" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?wsdl" />
+    <MetadataFile FileName="CustomFields3.xsd" MetadataType="Schema" ID="d6e252b4-0914-4a1b-a1ee-ca587376cb17" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3aa427b5-0c6b-42db-8bc2-ec8751c662e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ObjectLinkProvider.wsdl" MetadataType="Wsdl" ID="056b9901-469b-4444-b546-3e39c9326eb8" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ObjectLinkProvider.disco" MetadataType="Disco" ID="542112cf-ce03-4ebb-8f4e-377179b6a4bb" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?disco" />
+    <MetadataFile FileName="ObjectLinkProvider.xsd" MetadataType="Schema" ID="74b04bba-e4ec-4455-8f20-d0c4e0c3d117" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd4" />
+    <MetadataFile FileName="ObjectLinkProvider1.wsdl" MetadataType="Wsdl" ID="a3ef0d50-3bce-41b9-ab04-f6e367b294af" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?wsdl" />
+    <MetadataFile FileName="ObjectLinkProvider1.xsd" MetadataType="Schema" ID="fbee119a-d8d9-47bd-be23-f44f5bd74287" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd3" />
+    <MetadataFile FileName="ObjectLinkProviderDataSet.xsd" MetadataType="Schema" ID="dd5edc4f-af1a-4977-b517-4d310a79c419" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd2" />
+    <MetadataFile FileName="ObjectLinkProvider2.xsd" MetadataType="Schema" ID="15e896fe-469b-4921-be2e-dcb482ffc6d4" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd1" />
+    <MetadataFile FileName="ObjectLinkProvider3.xsd" MetadataType="Schema" ID="bb06a42a-5dcd-4ac2-bdad-8794e75e12c3" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/ObjectLinkProvider.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

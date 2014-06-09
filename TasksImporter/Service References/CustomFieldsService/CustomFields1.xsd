@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFields/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/CustomFields.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+  <xs:element name="CheckOutCustomFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="array" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q1:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckOutCustomFieldsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CheckInCustomFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="array" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="force" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInCustomFieldsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadCustomFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xmlFilter" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadCustomFieldsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByMdPropUids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="md_prop_uids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByMdPropUidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadCustomFieldsByMdPropUidsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="entityUid" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadCustomFieldsByEntityResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cfds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomFieldsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UpdateCustomFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cfds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomFieldsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="DeleteCustomFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CustomFieldIDs" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomFieldsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CreateCustomFields2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cfds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomFields2Response">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UpdateCustomFields2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cfds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomFields2Response">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadCustomFields2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xmlFilter" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFields2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadCustomFields2Result">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByMdPropUids2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="md_prop_uids" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByMdPropUids2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadCustomFieldsByMdPropUids2Result">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByEntity2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="entityUid" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadCustomFieldsByEntity2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadCustomFieldsByEntity2Result">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/CustomFieldDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

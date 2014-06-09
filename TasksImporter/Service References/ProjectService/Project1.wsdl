@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/Project/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Project/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/Project/Imports">
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/office/project/server/webservices/Project/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd3" namespace="http://Microsoft.Office.Project.Interfaces/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectContextDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectRelationsDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectImpactDataSet/" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" />
+      <xsd:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/office/project/server/webservices/SyncErrorsDataSet" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Project_CheckOutProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_CheckOutProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_CheckOutProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q1:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CheckOutProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q2:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCheckInProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCheckInProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCheckInProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCheckInProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCheckInProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q3:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCheckInProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q4:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCreateProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCreateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q5:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q6:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProjectAndCheckOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCreateProjectAndCheckOut" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProjectAndCheckOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCreateProjectAndCheckOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProjectAndCheckOut_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q7:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProjectAndCheckOut_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q8:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueAddToProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueAddToProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueAddToProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueAddToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueAddToProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q9:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueAddToProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q10:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateProjectFromTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProjectFromTemplate" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateProjectFromTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProjectFromTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateProjectFromTemplate_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q11:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateProjectFromTemplate_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q12:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueDeleteProjects" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueDeleteProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteProjects_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q13:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteProjects_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q14:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueRenameProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueRenameProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueRenameProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueRenameProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueRenameProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q15:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueRenameProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q16:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q17:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q18:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectEntities" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectEntities_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q19:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectEntities_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q20:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpdateProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpdateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q21:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q22:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteFromProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueDeleteFromProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteFromProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueDeleteFromProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteFromProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q23:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueDeleteFromProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q24:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectTeam_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectTeam" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectTeam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectTeam_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q25:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectTeam_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q26:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectTeam_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpdateProjectTeam" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectTeam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpdateProjectTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectTeam_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q27:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectTeam_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q28:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadSchedulingContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSchedulingContext" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadSchedulingContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSchedulingContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadSchedulingContext_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q29:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadSchedulingContext_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q30:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_GetProjectNameFromProjectUid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectNameFromProjectUid" />
+  </wsdl:message>
+  <wsdl:message name="Project_GetProjectNameFromProjectUid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectNameFromProjectUidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_GetProjectNameFromProjectUid_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q31:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_GetProjectNameFromProjectUid_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q32:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadServerListSeparator_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadServerListSeparator" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadServerListSeparator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadServerListSeparatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadServerListSeparator_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q33:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadServerListSeparator_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q34:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectStatus" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectStatus_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q35:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectStatus_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q36:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublish_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueuePublish" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueuePublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublish_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q37:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublish_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q38:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublishSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueuePublishSummary" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublishSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueuePublishSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublishSummary_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q39:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueuePublishSummary_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q40:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpgradeProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpgradeProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpgradeProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpgradeProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpgradeProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q41:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpgradeProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q42:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProposalProjectAndCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCreateProposalProjectAndCheckout" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProposalProjectAndCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueCreateProposalProjectAndCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProposalProjectAndCheckout_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q43:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueCreateProposalProjectAndCheckout_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q44:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateOperationsWorkFromWssList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOperationsWorkFromWssList" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateOperationsWorkFromWssList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOperationsWorkFromWssListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateOperationsWorkFromWssList_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q45:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateOperationsWorkFromWssList_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q46:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectWorkspaceAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectWorkspaceAddress" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectWorkspaceAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectWorkspaceAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectWorkspaceAddress_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q47:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectWorkspaceAddress_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q48:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectList" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectList_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q49:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectList_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q50:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectListByDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectListByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectListByDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectListByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectListByDepartment_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q51:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectListByDepartment_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q52:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueSynchronizeProjectWorkspace_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueSynchronizeProjectWorkspace" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueSynchronizeProjectWorkspace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueSynchronizeProjectWorkspaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueSynchronizeProjectWorkspace_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q53:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueSynchronizeProjectWorkspace_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q54:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectImpacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectImpacts" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectImpacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectImpactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectImpacts_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q55:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectImpacts_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q56:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectImpacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpdateProjectImpacts" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectImpacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueUpdateProjectImpactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectImpacts_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q57:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_QueueUpdateProjectImpacts_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q58:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateWssListSyncedProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWssListSyncedProject" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateWssListSyncedProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWssListSyncedProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateWssListSyncedProject_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q59:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_CreateWssListSyncedProject_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q60:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_SyncProjectWithWss_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncProjectWithWss" />
+  </wsdl:message>
+  <wsdl:message name="Project_SyncProjectWithWss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncProjectWithWssResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_SyncProjectWithWss_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q61:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_SyncProjectWithWss_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q62:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectSyncSettings" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectSyncSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncSettings_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q63:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncSettings_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q64:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectSyncSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectSyncSettings" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectSyncSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectSyncSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectSyncSettings_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q65:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_UpdateProjectSyncSettings_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q66:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncErrorInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectSyncErrorInfo" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncErrorInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadProjectSyncErrorInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncErrorInfo_ServerExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q67:ServerExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="Project_ReadProjectSyncErrorInfo_DefaultServerFaultFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://Microsoft.Office.Project.Interfaces/" name="detail" element="q68:DefaultServerFault" />
+  </wsdl:message>
+  <wsdl:portType name="Project">
+    <wsdl:operation name="CheckOutProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CheckOutProject" message="tns:Project_CheckOutProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CheckOutProjectResponse" message="tns:Project_CheckOutProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CheckOutProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_CheckOutProject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CheckOutProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_CheckOutProject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueCheckInProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCheckInProject" message="tns:Project_QueueCheckInProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCheckInProjectResponse" message="tns:Project_QueueCheckInProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCheckInProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueCheckInProject_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCheckInProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueCheckInProject_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProject" message="tns:Project_QueueCreateProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProjectResponse" message="tns:Project_QueueCreateProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCreateProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueCreateProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCreateProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueCreateProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProjectAndCheckOut">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProjectAndCheckOut" message="tns:Project_QueueCreateProjectAndCheckOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProjectAndCheckOutResponse" message="tns:Project_QueueCreateProjectAndCheckOut_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCreateProjectAndCheckOutServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueCreateProjectAndCheckOut_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCreateProjectAndCheckOutDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueCreateProjectAndCheckOut_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueAddToProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueAddToProject" message="tns:Project_QueueAddToProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueAddToProjectResponse" message="tns:Project_QueueAddToProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueAddToProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueAddToProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueAddToProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueAddToProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProjectFromTemplate">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateProjectFromTemplate" message="tns:Project_CreateProjectFromTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateProjectFromTemplateResponse" message="tns:Project_CreateProjectFromTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CreateProjectFromTemplateDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_CreateProjectFromTemplate_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CreateProjectFromTemplateServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_CreateProjectFromTemplate_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueDeleteProjects">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteProjects" message="tns:Project_QueueDeleteProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteProjectsResponse" message="tns:Project_QueueDeleteProjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueDeleteProjectsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueDeleteProjects_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueDeleteProjectsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueDeleteProjects_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueRenameProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueRenameProject" message="tns:Project_QueueRenameProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueRenameProjectResponse" message="tns:Project_QueueRenameProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueRenameProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueRenameProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueRenameProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueRenameProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProject" message="tns:Project_ReadProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectResponse" message="tns:Project_ReadProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectEntities">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectEntities" message="tns:Project_ReadProjectEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectEntitiesResponse" message="tns:Project_ReadProjectEntities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectEntitiesServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectEntities_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectEntitiesDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectEntities_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProject" message="tns:Project_QueueUpdateProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectResponse" message="tns:Project_QueueUpdateProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpdateProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueUpdateProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpdateProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueUpdateProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueDeleteFromProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteFromProject" message="tns:Project_QueueDeleteFromProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteFromProjectResponse" message="tns:Project_QueueDeleteFromProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueDeleteFromProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueDeleteFromProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueDeleteFromProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueDeleteFromProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectTeam">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectTeam" message="tns:Project_ReadProjectTeam_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectTeamResponse" message="tns:Project_ReadProjectTeam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectTeamServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectTeam_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectTeamDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectTeam_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProjectTeam">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectTeam" message="tns:Project_QueueUpdateProjectTeam_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectTeamResponse" message="tns:Project_QueueUpdateProjectTeam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpdateProjectTeamDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueUpdateProjectTeam_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpdateProjectTeamServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueUpdateProjectTeam_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSchedulingContext">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadSchedulingContext" message="tns:Project_ReadSchedulingContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadSchedulingContextResponse" message="tns:Project_ReadSchedulingContext_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadSchedulingContextDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadSchedulingContext_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadSchedulingContextServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadSchedulingContext_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectNameFromProjectUid">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/GetProjectNameFromProjectUid" message="tns:Project_GetProjectNameFromProjectUid_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/GetProjectNameFromProjectUidResponse" message="tns:Project_GetProjectNameFromProjectUid_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/GetProjectNameFromProjectUidServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_GetProjectNameFromProjectUid_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/GetProjectNameFromProjectUidDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_GetProjectNameFromProjectUid_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadServerListSeparator">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadServerListSeparator" message="tns:Project_ReadServerListSeparator_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadServerListSeparatorResponse" message="tns:Project_ReadServerListSeparator_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadServerListSeparatorServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadServerListSeparator_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadServerListSeparatorDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadServerListSeparator_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectStatus">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectStatus" message="tns:Project_ReadProjectStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectStatusResponse" message="tns:Project_ReadProjectStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectStatusDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectStatus_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectStatusServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectStatus_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueuePublish">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublish" message="tns:Project_QueuePublish_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublishResponse" message="tns:Project_QueuePublish_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueuePublishDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueuePublish_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueuePublishServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueuePublish_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueuePublishSummary">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublishSummary" message="tns:Project_QueuePublishSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublishSummaryResponse" message="tns:Project_QueuePublishSummary_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueuePublishSummaryServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueuePublishSummary_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueuePublishSummaryDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueuePublishSummary_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpgradeProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpgradeProject" message="tns:Project_QueueUpgradeProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpgradeProjectResponse" message="tns:Project_QueueUpgradeProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpgradeProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueUpgradeProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpgradeProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueUpgradeProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProposalProjectAndCheckout">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProposalProjectAndCheckout" message="tns:Project_QueueCreateProposalProjectAndCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProposalProjectAndCheckoutResponse" message="tns:Project_QueueCreateProposalProjectAndCheckout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCreateProposalProjectAndCheckoutServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueCreateProposalProjectAndCheckout_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueCreateProposalProjectAndCheckoutDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueCreateProposalProjectAndCheckout_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOperationsWorkFromWssList">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateOperationsWorkFromWssList" message="tns:Project_CreateOperationsWorkFromWssList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateOperationsWorkFromWssListResponse" message="tns:Project_CreateOperationsWorkFromWssList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CreateOperationsWorkFromWssListDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_CreateOperationsWorkFromWssList_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CreateOperationsWorkFromWssListServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_CreateOperationsWorkFromWssList_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectWorkspaceAddress">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectWorkspaceAddress" message="tns:Project_UpdateProjectWorkspaceAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectWorkspaceAddressResponse" message="tns:Project_UpdateProjectWorkspaceAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/UpdateProjectWorkspaceAddressDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_UpdateProjectWorkspaceAddress_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/UpdateProjectWorkspaceAddressServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_UpdateProjectWorkspaceAddress_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectList">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectList" message="tns:Project_ReadProjectList_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectListResponse" message="tns:Project_ReadProjectList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectListDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectList_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectListServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectList_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectListByDepartment">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectListByDepartment" message="tns:Project_ReadProjectListByDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectListByDepartmentResponse" message="tns:Project_ReadProjectListByDepartment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectListByDepartmentServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectListByDepartment_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectListByDepartmentDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectListByDepartment_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueSynchronizeProjectWorkspace">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueSynchronizeProjectWorkspace" message="tns:Project_QueueSynchronizeProjectWorkspace_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueSynchronizeProjectWorkspaceResponse" message="tns:Project_QueueSynchronizeProjectWorkspace_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueSynchronizeProjectWorkspaceServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueSynchronizeProjectWorkspace_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueSynchronizeProjectWorkspaceDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueSynchronizeProjectWorkspace_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectImpacts">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectImpacts" message="tns:Project_ReadProjectImpacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectImpactsResponse" message="tns:Project_ReadProjectImpacts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectImpactsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectImpacts_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectImpactsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectImpacts_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProjectImpacts">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectImpacts" message="tns:Project_QueueUpdateProjectImpacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectImpactsResponse" message="tns:Project_QueueUpdateProjectImpacts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpdateProjectImpactsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_QueueUpdateProjectImpacts_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/QueueUpdateProjectImpactsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_QueueUpdateProjectImpacts_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWssListSyncedProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateWssListSyncedProject" message="tns:Project_CreateWssListSyncedProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateWssListSyncedProjectResponse" message="tns:Project_CreateWssListSyncedProject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CreateWssListSyncedProjectServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_CreateWssListSyncedProject_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/CreateWssListSyncedProjectDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_CreateWssListSyncedProject_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProjectWithWss">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/SyncProjectWithWss" message="tns:Project_SyncProjectWithWss_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/SyncProjectWithWssResponse" message="tns:Project_SyncProjectWithWss_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/SyncProjectWithWssServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_SyncProjectWithWss_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/SyncProjectWithWssDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_SyncProjectWithWss_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectSyncSettings">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncSettings" message="tns:Project_ReadProjectSyncSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncSettingsResponse" message="tns:Project_ReadProjectSyncSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectSyncSettingsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectSyncSettings_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectSyncSettingsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectSyncSettings_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectSyncSettings">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectSyncSettings" message="tns:Project_UpdateProjectSyncSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectSyncSettingsResponse" message="tns:Project_UpdateProjectSyncSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/UpdateProjectSyncSettingsDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_UpdateProjectSyncSettings_DefaultServerFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/UpdateProjectSyncSettingsServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_UpdateProjectSyncSettings_ServerExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectSyncErrorInfo">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncErrorInfo" message="tns:Project_ReadProjectSyncErrorInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncErrorInfoResponse" message="tns:Project_ReadProjectSyncErrorInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectSyncErrorInfoServerExecutionFaultFault" name="ServerExecutionFaultFault" message="tns:Project_ReadProjectSyncErrorInfo_ServerExecutionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/office/project/server/webservices/Project/Project/ReadProjectSyncErrorInfoDefaultServerFaultFault" name="DefaultServerFaultFault" message="tns:Project_ReadProjectSyncErrorInfo_DefaultServerFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/StatusApprovalDataSet/" id="StatusApprovalDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="StatusApprovalDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StatusApprovals">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="TASK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="TASK_PARENT_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" name="TASK_ID" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" name="TASK_IS_SUMMARY" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" name="IS_ASSN" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="RES_UID_OWNER" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" name="ASSN_TRANS_UID" type="xs:string" />
+              <xs:element name="ASSN_TRANS_ACTION_ENUM" type="xs:short" />
+              <xs:element name="ASSN_TRANS_TYPE_ENUM" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME_OWNER" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME_MANAGER" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME_DELEGATEE" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME_SUBMITTER" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_TYPE" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_START_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_FINISH_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_REM_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_PCT_WORK_COMPLETE" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ACT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_TEAM_STATUS_PENDING" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" name="WASSN_IS_NEW_ASSN" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" name="WASSN_REMOVED_BY_RES" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_ISSUE_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_DOC_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_RISK_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_OTHER_REF_CNT" type="xs:int" />
+              <xs:element name="WASSN_NOTE_STATUS" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_TRANS_SUBMIT_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ERROR_STATUS" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ERROR_TOOLTIP" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" name="MOD_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_CHANGE_DATA" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="TASK_CHANGE_DATA" type="xs:base64Binary" />
+              <xs:element msdata:ReadOnly="true" name="IS_PUBLISHED" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_TRANS_COMMENT" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="StatusApprovalDataSetKey1">
+      <xs:selector xpath=".//mstns:StatusApprovals" />
+      <xs:field xpath="mstns:ASSN_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

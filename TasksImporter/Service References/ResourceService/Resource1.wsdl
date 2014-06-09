@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://schemas.microsoft.com/office/project/server/webservices/Resource/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Resource" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/office/project/server/webservices/Resource/" location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_Resource" type="i0:Resource">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAvailabilityForGrid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailabilityForGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAssignments">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAssignments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceUids">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetResourceUids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckOutResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckInResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserList">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceListByDepartment">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUserUid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetCurrentUserUid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAuthorization">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResource">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetResourceAuthorization">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/SetResourceAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ActivateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeactivateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAvailability">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDelegation">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_Resource1" type="i0:Resource">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAvailabilityForGrid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailabilityForGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAssignments">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAssignments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceUids">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetResourceUids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckOutResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CheckInResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserList">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceListByDepartment">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUserUid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/GetCurrentUserUid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAuthorization">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResource">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetResourceAuthorization">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/SetResourceAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ActivateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateResources">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeactivateResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResourceAvailability">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadResourceAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDelegation">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/ReadDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/DeleteDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/UpdateDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDelegations">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Resource/CreateDelegations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Resource">
+    <wsdl:port name="BasicHttpBinding_Resource" binding="tns:BasicHttpBinding_Resource">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc/secure" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_Resource1" binding="tns:BasicHttpBinding_Resource1">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Resource.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

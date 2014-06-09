@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/SyncDataSet" id="SyncDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="SyncDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SyncProjectSettings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SYNC_WSS_LIST_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="SYNC_WSS_SERVER_URL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SYNC_LAST_SYNC_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SyncFieldMappings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SYNC_WSS_LIST_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SYNC_WSS_FIELD_UID" type="xs:string" />
+              <xs:element name="SYNC_WSS_FIELD_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnPropNameInTable="SYNC_PROJECT_FIELD_UID" msprop:Generator_UserColumnName="SYNC_PROJECT_FIELD_UID" name="SYNC_PROJECT_FIELD_UID" type="xs:string" />
+              <xs:element name="SYNC_PROJECT_FIELD_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SYNC_IS_PROJECT_CUSTOM_FIELD" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SyncItemTaskMappings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SYNC_WSS_LIST_UID" type="xs:string" />
+              <xs:element name="SYNC_WSS_LIST_ITEM_ID" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="SYNC_TASK_UID" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SyncValueTranslations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SYNC_WSS_LIST_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="SYNC_WSS_FIELD_UID" type="xs:string" />
+              <xs:element name="SYNC_WSS_FIELD_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SYNC_WSS_VALUE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SYNC_PROJECT_VALUE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:SyncProjectSettings" />
+      <xs:field xpath="mstns:SYNC_WSS_LIST_UID" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="SyncFieldMappings_Constraint1">
+      <xs:selector xpath=".//mstns:SyncFieldMappings" />
+      <xs:field xpath="mstns:SYNC_WSS_LIST_UID" />
+      <xs:field xpath="mstns:SYNC_PROJECT_FIELD_UID" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="SyncItemTaskMappings_Constraint1">
+      <xs:selector xpath=".//mstns:SyncItemTaskMappings" />
+      <xs:field xpath="mstns:SYNC_WSS_LIST_UID" />
+      <xs:field xpath="mstns:SYNC_WSS_LIST_ITEM_ID" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="SyncValueTranslations_Constraint1">
+      <xs:selector xpath=".//mstns:SyncValueTranslations" />
+      <xs:field xpath="mstns:SYNC_WSS_LIST_UID" />
+      <xs:field xpath="mstns:SYNC_WSS_FIELD_UID" />
+      <xs:field xpath="mstns:SYNC_WSS_VALUE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

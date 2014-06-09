@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceDataSet/" id="ResourceDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="ResourceDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Resources">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element default="-1" name="RES_ID" type="xs:int" />
+              <xs:element default="2" name="RES_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" default="false" name="RES_HAS_NOTES" type="xs:boolean" />
+              <xs:element minOccurs="0" default="true" name="RES_CAN_LEVEL" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RES_ACCRUE_AT" type="xs:short" />
+              <xs:element minOccurs="0" name="RES_BOOKING_TYPE" type="xs:int" />
+              <xs:element name="RES_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_INITIALS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_PHONETICS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_MATERIAL_LABEL" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_RTF_NOTES" type="xs:base64Binary" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WRES_ACCOUNT" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_IS_WINDOWS_USER" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WRES_EMAIL" type="xs:string" />
+              <xs:element minOccurs="0" name="WRES_EMAIL_LANGUAGE" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="RES_CHECKOUTBY" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_CHECKOUTDATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RES_HYPERLINK_FRIENDLY_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_HYPERLINK_ADDRESS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_HYPERLINK_SUB_ADDRESS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_CODE" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_GROUP" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_EXTERNAL_ID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="RES_TIMESHEET_MGR_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="RES_DEF_ASSN_OWNER" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_HIRE_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RES_TERMINATION_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" default="false" name="RES_IS_TEAM" type="xs:boolean" />
+              <xs:element minOccurs="0" default="false" name="RES_EXCHANGE_SYNC" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RES_EXCHANGE_EWS_URL" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_COST_CENTER" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_NOTES" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="BaseCalendarUniqueId" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResourceCustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="CUSTOM_FIELD_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="FLAG_VALUE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="MD_PROP_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="TEXT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="FIELD_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="DATE_VALUE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CODE_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DUR_VALUE" type="xs:int" />
+              <xs:element minOccurs="0" name="NUM_VALUE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DUR_FMT" type="xs:unsignedByte" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="INDICATOR_VALUE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CalendarExceptions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Start" type="xs:dateTime" />
+              <xs:element name="Finish" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Shift1Start" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift1Finish" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift2Start" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift2Finish" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift3Start" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift3Finish" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift4Start" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift4Finish" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift5Start" type="xs:int" />
+              <xs:element minOccurs="0" name="Shift5Finish" type="xs:int" />
+              <xs:element name="RecurrenceType" type="xs:int" />
+              <xs:element name="RecurrenceFrequency" type="xs:int" />
+              <xs:element minOccurs="0" name="RecurrenceDays" type="xs:int" />
+              <xs:element minOccurs="0" name="RecurrenceMonthDay" type="xs:int" />
+              <xs:element minOccurs="0" name="RecurrenceMonth" type="xs:int" />
+              <xs:element minOccurs="0" name="RecurrencePosition" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResourceRates">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element default="0" name="RES_RATE_TABLE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_RATE_EFFECTIVE_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" default="0" name="RES_STD_RATE" type="xs:double" />
+              <xs:element minOccurs="0" default="0" name="RES_OVT_RATE" type="xs:double" />
+              <xs:element minOccurs="0" default="0" name="RES_COST_PER_USE" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResourceAvailabilities">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_AVAIL_FROM" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RES_AVAIL_TO" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RES_AVAIL_UNITS" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="ResourceDataSetKey1">
+      <xs:selector xpath=".//mstns:Resources" />
+      <xs:field xpath="mstns:RES_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="ResourceDataSetKey3">
+      <xs:selector xpath=".//mstns:ResourceCustomFields" />
+      <xs:field xpath="mstns:CUSTOM_FIELD_UID" />
+    </xs:unique>
+    <xs:keyref name="ResourcesResourceAvailabilities" refer="mstns:ResourceDataSetKey1">
+      <xs:selector xpath=".//mstns:ResourceAvailabilities" />
+      <xs:field xpath="mstns:RES_UID" />
+    </xs:keyref>
+    <xs:keyref name="ResourcesResourceRates" refer="mstns:ResourceDataSetKey1">
+      <xs:selector xpath=".//mstns:ResourceRates" />
+      <xs:field xpath="mstns:RES_UID" />
+    </xs:keyref>
+    <xs:keyref name="ResourcesCalendarExceptions" refer="mstns:ResourceDataSetKey1">
+      <xs:selector xpath=".//mstns:CalendarExceptions" />
+      <xs:field xpath="mstns:RES_UID" />
+    </xs:keyref>
+    <xs:keyref name="ResourcesResourceCustomFields" refer="mstns:ResourceDataSetKey1">
+      <xs:selector xpath=".//mstns:ResourceCustomFields" />
+      <xs:field xpath="mstns:RES_UID" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

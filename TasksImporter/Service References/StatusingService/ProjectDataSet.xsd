@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ProjectDataSet/" id="ProjectDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="ProjectDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Project">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_PROP_AUTHOR" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CAL_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CAL_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_PROP_CATEGORY" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_PROP_COMPANY" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_PROP_KEYWORDS" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_PROP_MANAGER" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_PROP_SUBJECT" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_PROP_TITLE" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CALC_ACT_COSTS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CRITICAL_SLACK_LIMIT" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_DIGITS" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_POSITION" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_SYMBOL" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_CODE" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_OPT_NEW_TASKS_ARE_EFFORT_DRIVEN" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_INFO_CURRENT_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_OPT_DEF_FINISH_TIME" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="PROJ_OPT_DEF_FIX_COST_ACCRUAL" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_DEF_OVT_RATE" type="xs:double" />
+              <xs:element minOccurs="0" name="PROJ_OPT_DEF_STD_RATE" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_OPT_DEF_START_TIME" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="PROJ_OPT_DEF_TASK_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="WPROJ_TRACKING_METHOD" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_DUR_ENTRY_FMT" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_INFO_FINISH_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="PROJ_OPT_HONOR_CONSTRAINTS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MULT_CRITICAL_PATHS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_INFO_SCHED_FROM" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_SPLIT_IN_PROGRESS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_SPREAD_ACT_COSTS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_SPREAD_PCT_COMP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_INFO_START_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="PROJ_INFO_STATUS_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="PROJ_OPT_TASK_UPDATES_RES" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_WORK_ENTRY_FMT" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_NEW_TASK_EST" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_PROTECTED_ACTUALS_SYNCH" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ProjectOptionDefaultOvertimeRateFormat" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ProjectOptionDefaultStandardRateFormat" type="xs:short" />
+              <xs:element minOccurs="0" name="PROJ_OPT_FY_START_MONTH" type="xs:short" />
+              <xs:element minOccurs="0" name="PROJ_OPT_FY_USE_START_YR" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MINUTES_PER_DAY" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MINUTES_PER_WEEK" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_DAYS_PER_MONTH" type="xs:short" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MOVE_ACTUAL_IF_LATER" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MOVE_ACTUAL_TO_STATUS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MOVE_REMAINING_IF_EARLIER" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_MOVE_REMAINING_TO_STATUS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_SHOW_EST_DUR" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_OPT_WEEK_START_DAY" type="xs:short" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="WPROJ_ISSUE_LIST_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="WPROJ_RISK_LIST_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WPROJ_STS_SUBWEB_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="WSTS_SERVER_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="ProjectOwnerID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="PROJ_CHECKOUTBY" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_CHECKOUTDATE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="PROJ_SESSION_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_SESSION_DESCRIPTION" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_STALE_FLAGS" type="xs:int" />
+              <xs:element minOccurs="0" name="WPROJ_DESCRIPTION" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WPROJ_LAST_PUB" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_LAST_SAVED" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="ENTERPRISE_PROJECT_TYPE_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ENTERPRISE_PROJECT_TYPE_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="WORKFLOW_INSTANCE_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="PHASE_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PHASE_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="STAGE_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="STAGE_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="SKIP_TO_STAGE_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="OPTIMIZER_SOLUTION_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="PLANNER_SOLUTION_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="OPTIMIZER_DECISION" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PLANNER_DECISION" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PLANNER_START_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PLANNER_END_DATE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="OPTIMIZER_FORCE_ALIAS_LT_VALUE_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="PLANNER_FORCE_ALIAS_LT_VALUE_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_NEW_TASKS_ARE_MANUAL" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_WINPROJ_VERSION_NUMBER" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Task">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="TASK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="TASK_PARENT_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_IS_MILESTONE" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_SUMMARY" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_IS_MARKED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IGNORES_RES_CAL" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_IS_EFFORT_DRIVEN" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_CRITICAL" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_EXTERNAL" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_FROM_FINISH_SUBPROJ" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_OVERALLOCATED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_RECURRING" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_RECURRING_SUMMARY" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_SUBPROJ" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_READONLY_SUBPROJ" type="xs:boolean" />
+              <xs:element default="false" name="TASK_LOCKDOWN_BY_MANAGER" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_LEVELING_DELAY" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_LEVELING_DELAY_FMT" type="xs:short" />
+              <xs:element minOccurs="0" name="TASK_LEVELING_CAN_SPLIT" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_LEVELING_ADJUSTS_ASSN" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_DUR_IS_EST" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_DUR" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_DUR_FMT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_DUR_VAR" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_EAC" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_VAC" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_ACT_DUR" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_REM_DUR" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_CONSTRAINT_TYPE" type="xs:short" />
+              <xs:element minOccurs="0" name="TASK_CONSTRAINT_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_ACT_START" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_ACT_FINISH" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_PRIORITY" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_PCT_COMP" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_PCT_WORK_COMP" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_FIXED_COST_ACCRUAL" type="xs:short" />
+              <xs:element minOccurs="0" name="TASK_DEADLINE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_OVT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_REG_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_ACT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_ACT_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_REM_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_REM_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_OVT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_FIXED_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_ACT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_ACT_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_REM_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_REM_OVT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_PHY_PCT_COMP" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_EVMETHOD" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_OUTLINE_LEVEL" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_OUTLINE_NUM" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="TASK_CAL_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_START_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_START_VAR" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_FINISH_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_FINISH_VAR" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_RESUME_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_STOP_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_PRELEVELED_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_PRELEVELED_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_EARLY_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_EARLY_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_LATE_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_LATE_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TB_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TB_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TB_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TB_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TB_DUR" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TB_DUR_FMT" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_BCWS" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_BCWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_ACWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_FREE_SLACK" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_TOTAL_SLACK" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_HAS_LINKED_FIELDS" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_WBS" type="xs:string" />
+              <xs:element minOccurs="0" name="AddPosition" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="AddAfterTaskUID" type="xs:string" />
+              <xs:element minOccurs="0" name="DurationType" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_DOC_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_ISSUE_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_RISK_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="WOBJ_OTHER_REF_CNT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_TYPE" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_OPT_CURRENCY_DIGITS" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_OPT_CURRENCY_POSITION" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_OPT_CURRENCY_SYMBOL" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="TASK_EXT_PROJ_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_BUDGET_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_NULL" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_BUDGET_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_CONTACT" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_COST_VAR" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_CPI" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_CV" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TaskCVP" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_START_SLACK" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_FINISH_SLACK" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_HYPERLINK_FRIENDLY_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_HYPERLINK_ADDRESS" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_HYPERLINK_SUB_ADDRESS" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_ROLLED_UP" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_NOTES" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_SPI" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_SV" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TaskSVP" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_TCPI" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_WORK_VAR" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_COMPLETE_THROUGH" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_IS_MANUAL" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_IS_ACTIVE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TASK_IS_DISPSUMMARY" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_SCHED_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_SCHED_FINISH" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_START_TXT" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_FINISH_TXT" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_SCHED_DUR" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_SCHED_DUR_FMT" type="xs:int" />
+              <xs:element minOccurs="0" name="TASK_DUR_TXT" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="StatusManager" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectResource">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="RES_AD_GUID" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_INITIALS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_PHONETICS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_CODE" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_GROUP" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_HYPERLINK_ADDRESS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_HYPERLINK_FRIENDLY_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_HYPERLINK_SUB_ADDRESS" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_BOOKING_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_MATERIAL_LABEL" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_STD_RATE" type="xs:double" />
+              <xs:element minOccurs="0" name="RES_STD_RATE_FMT" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_PEAK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_OVT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="RES_OVT_RATE" type="xs:double" />
+              <xs:element minOccurs="0" name="RES_OVT_RATE_FMT" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_COST_PER_USE" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ACT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ACT_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_REM_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_REM_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ACT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ACT_OVT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_OVT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_REM_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_REM_OVT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_REG_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="RES_ACCRUE_AT" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_AVAIL_FROM" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_AVAIL_TO" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RES_MAX_UNITS" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_HAS_NOTES" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WRES_ACCOUNT" type="xs:string" />
+              <xs:element minOccurs="0" name="WRES_EMAIL" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ASSN_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ASSN_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_ACWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_BCWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_BCWS" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_PCT_WORK_COMPLETE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_CAN_LEVEL" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_HAS_LINKED_FIELDS" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_IS_OVERALLOCATED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_IS_ENTERPRISE_RESOURCE" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="RES_DEF_ASSN_OWNER" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ResourceIsBudget" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_BUDGET_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_BUDGET_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="RES_COST_CENTER" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_DIGITS" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_POSITION" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_SYMBOL" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NOTES" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_COST_VAR" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_CV" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ResourceIsGeneric" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_SV" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_VAC" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_WORK_VAR" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RB_BASE_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RB_BASE_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Assignment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="TASK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="ASSN_PARENT_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="ASSN_ACT_START" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_ACT_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_WORK_CONTOUR" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_DELAY" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_LEVELING_DELAY" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_COST_RATE_TABLE" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_UNITS" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REG_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REM_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REM_OVT_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_START_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_FINISH_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AB_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AB_START" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AB_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AB_COST_PER_USE" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AB_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_RESUME_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_STOP_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ENTSUMPROJID" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_REM_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_REM_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="ASSN_PCT_WORK_COMPLETE" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ACWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_BCWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_BCWS" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_BOOKING_TYPE" type="xs:short" />
+              <xs:element minOccurs="0" name="ASSN_DEMAND_REQ" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="ASSN_MATERIAL_RATE_FMT" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_DELAY_FMT" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_START_VAR" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_FINISH_VAR" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_HAS_LINKED_FIELDS" type="xs:boolean" />
+              <xs:element default="false" name="WASSN_LOCKDOWN_BY_MANAGER" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_IS_CONFIRMED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_IS_PUBLISHED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_IS_OVERALLOCATED" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ASSN_RES_TYPE" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_RESPONSE_PENDING" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_UPDATE_NEEDED" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="RES_UID_OWNER" type="xs:string" />
+              <xs:element minOccurs="0" name="ASSN_BUDGET_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_BUDGET_WORK" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_DIGITS" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_POSITION" type="xs:int" />
+              <xs:element minOccurs="0" name="PROJ_OPT_CURRENCY_SYMBOL" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_COST_VAR" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_CV" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_HYPERLINK_FRIENDLY_NAME" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_HYPERLINK_ADDRESS" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AssignmentHyperlinkHref" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_NOTES" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_SV" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_VAC" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_WORK_VAR" type="xs:double" />
+              <xs:element minOccurs="0" name="RES_MATERIAL_LABEL" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_BOOKING_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_GROUP" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ResourceIsGeneric" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Dependency">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LINK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LINK_PRED_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="LINK_SUCC_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="LINK_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="LINK_LAG" type="xs:int" />
+              <xs:element minOccurs="0" name="LINK_LAG_FMT" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectCustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="CUSTOM_FIELD_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="FIELD_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="FLAG_VALUE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TEXT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DATE_VALUE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CODE_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DUR_VALUE" type="xs:int" />
+              <xs:element minOccurs="0" name="NUM_VALUE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DUR_FMT" type="xs:unsignedByte" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="INDICATOR_VALUE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TaskCustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="CUSTOM_FIELD_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="TASK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="FIELD_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="FLAG_VALUE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TEXT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DATE_VALUE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CODE_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DUR_VALUE" type="xs:int" />
+              <xs:element minOccurs="0" name="NUM_VALUE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DUR_FMT" type="xs:unsignedByte" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="INDICATOR_VALUE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectResourceCustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="CUSTOM_FIELD_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="FIELD_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="FLAG_VALUE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TEXT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DATE_VALUE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CODE_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DUR_VALUE" type="xs:int" />
+              <xs:element minOccurs="0" name="NUM_VALUE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DUR_FMT" type="xs:unsignedByte" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="INDICATOR_VALUE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AssignmentCustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="CUSTOM_FIELD_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="FIELD_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="FLAG_VALUE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TEXT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DATE_VALUE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CODE_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DUR_VALUE" type="xs:int" />
+              <xs:element minOccurs="0" name="NUM_VALUE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DUR_FMT" type="xs:unsignedByte" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="INDICATOR_VALUE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="ProjectKey">
+      <xs:selector xpath=".//mstns:Project" />
+      <xs:field xpath="mstns:PROJ_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="TaskKey">
+      <xs:selector xpath=".//mstns:Task" />
+      <xs:field xpath="mstns:TASK_UID" />
+      <xs:field xpath="mstns:PROJ_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="ResourceKey">
+      <xs:selector xpath=".//mstns:ProjectResource" />
+      <xs:field xpath="mstns:RES_UID" />
+      <xs:field xpath="mstns:PROJ_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="AssignmentKey">
+      <xs:selector xpath=".//mstns:Assignment" />
+      <xs:field xpath="mstns:ASSN_UID" />
+      <xs:field xpath="mstns:PROJ_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="DependencyKey">
+      <xs:selector xpath=".//mstns:Dependency" />
+      <xs:field xpath="mstns:LINK_UID" />
+      <xs:field xpath="mstns:PROJ_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="ProjectCustomFieldsKey">
+      <xs:selector xpath=".//mstns:ProjectCustomFields" />
+      <xs:field xpath="mstns:CUSTOM_FIELD_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="TaskCustomFieldsKey">
+      <xs:selector xpath=".//mstns:TaskCustomFields" />
+      <xs:field xpath="mstns:CUSTOM_FIELD_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="ProjectResourceCustomFieldsKey">
+      <xs:selector xpath=".//mstns:ProjectResourceCustomFields" />
+      <xs:field xpath="mstns:CUSTOM_FIELD_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="AssignmentCustomFieldsKey">
+      <xs:selector xpath=".//mstns:AssignmentCustomFields" />
+      <xs:field xpath="mstns:CUSTOM_FIELD_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

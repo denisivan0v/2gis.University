@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/TeamBuilderDataSet/" id="ProjectTeamDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="ProjectTeamDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProjectTeam">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="NEW_RES_UID" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_BOOKING_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="RES_HAS_ACTUALS" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_TYPE" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RES_IS_ENTERPRISE_RESOURCE" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="ProjectTeamKey">
+      <xs:selector xpath=".//mstns:ProjectTeam" />
+      <xs:field xpath="mstns:RES_UID" />
+      <xs:field xpath="mstns:PROJ_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

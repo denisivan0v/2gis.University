@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/ResourceAssignmentDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/ResourceAssignmentDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ResourceAssignmentDataSet/" id="ResourceAssignmentDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="ResourceAssignmentDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ResourceAssignment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="TASK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" minOccurs="0" name="ASSN_PARENT_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="ASSN_ACT_START" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_ACT_FINISH" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_WORK_CONTOUR" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_DELAY" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_LEVELING_DELAY" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_COST_RATE_TABLE" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_UNITS" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_BASE_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REG_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REM_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REM_OVT_WORK" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_START_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_FINISH_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_BASE_START" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_BASE_FINISH" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_RESUME_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_STOP_DATE" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_BASE_COST_PER_USE" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ENTSUMPROJID" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_ACT_OVT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_BASE_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REM_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_REM_OVT_COST" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_OVT_COST" type="xs:double" />
+              <xs:element minOccurs="0" name="TASK_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="RES_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="ASSN_PCT_WORK_COMPLETE" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_ACWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_BCWP" type="xs:double" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_BCWS" type="xs:double" />
+              <xs:element minOccurs="0" name="ASSN_BOOKING_TYPE" type="xs:short" />
+              <xs:element minOccurs="0" name="ASSN_DEMAND_REQ" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="ASSN_MATERIAL_RATE_FMT" type="xs:short" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_DELAY_FMT" type="xs:short" />
+              <xs:element minOccurs="0" name="ASSN_START_VAR" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_FINISH_VAR" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_HAS_LINKED_FIELDS" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_IS_CONFIRMED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TASK_IS_SUMMARY" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ASSN_IS_OVERALLOCATED" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ASSN_RES_TYPE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ASSN_RESPONSE_PENDING" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WASSN_SEND_UPDATE_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="WASSN_NOTE_STATUS" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ASSN_UPDATE_NEEDED" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="WASSN_COMMENTS" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResourceAssignmentCustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="CUSTOM_FIELD_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="MD_PROP_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="MD_PROP_ID" type="xs:int" />
+              <xs:element minOccurs="0" name="FIELD_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="FLAG_VALUE" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TEXT_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DATE_VALUE" type="xs:dateTime" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="CODE_VALUE" type="xs:string" />
+              <xs:element minOccurs="0" name="DUR_VALUE" type="xs:int" />
+              <xs:element minOccurs="0" name="NUM_VALUE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DUR_FMT" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="INDICATOR_VALUE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="ResourceAssignmentKey">
+      <xs:selector xpath=".//mstns:ResourceAssignment" />
+      <xs:field xpath="mstns:ASSN_UID" />
+      <xs:field xpath="mstns:PROJ_UID" />
+      <xs:field xpath="mstns:RES_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="ResourceAssignmentCustomFieldsKey">
+      <xs:selector xpath=".//mstns:ResourceAssignmentCustomFields" />
+      <xs:field xpath="mstns:CUSTOM_FIELD_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

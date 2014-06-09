@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9ED47189-1EC7-451B-BBD2-17E8E9885BFE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoubleGis.University</RootNamespace>
+    <AssemblyName>TasksImporter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\JiraTaskDto.cs" />
+    <Compile Include="JiraQueryResultParser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PsiServiceClientFactory.cs" />
+    <Compile Include="Service References\CustomFieldsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LookupTableService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ObjectLinkProviderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProjectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ResourceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\StatusingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\CustomFieldsService\CustomFieldDataSet.xsd" />
+    <None Include="Service References\CustomFieldsService\CustomFields.wsdl" />
+    <None Include="Service References\CustomFieldsService\CustomFields.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomFieldsService\CustomFields1.wsdl" />
+    <None Include="Service References\CustomFieldsService\CustomFields1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomFieldsService\CustomFields2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomFieldsService\CustomFields3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomFieldsService\DoubleGis.University.CustomFieldsService.CustomFieldDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupTableService\DoubleGis.University.LookupTableService.LookupTableDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupTableService\DoubleGis.University.LookupTableService.LookupTableMultiLangDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupTableService\LookupTable.wsdl" />
+    <None Include="Service References\LookupTableService\LookupTable.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupTableService\LookupTable1.wsdl" />
+    <None Include="Service References\LookupTableService\LookupTable1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupTableService\LookupTable2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupTableService\LookupTable3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupTableService\LookupTableDataSet.xsd" />
+    <None Include="Service References\LookupTableService\LookupTableMultiLangDataSet.xsd" />
+    <None Include="Service References\ObjectLinkProviderService\DoubleGis.University.ObjectLinkProviderService.ObjectLinkProviderDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\DoubleGis.University.ObjectLinkProviderService.WebObjectLinkType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider.wsdl" />
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider1.wsdl" />
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProviderDataSet.xsd" />
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.ProjectContextDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.ProjectDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.ProjectImpactDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.ProjectRelationsDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.ProjectTeamDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.SyncDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\DoubleGis.University.ProjectService.SyncErrorsDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectService\Project.wsdl" />
+    <None Include="Service References\ProjectService\Project.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProjectService\Project1.wsdl" />
+    <None Include="Service References\ProjectService\Project1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProjectService\Project2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProjectService\Project3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProjectService\ProjectContextDataSet.xsd" />
+    <None Include="Service References\ProjectService\ProjectDataSet.xsd" />
+    <None Include="Service References\ProjectService\ProjectImpactDataSet.xsd" />
+    <None Include="Service References\ProjectService\ProjectRelationsDataSet.xsd" />
+    <None Include="Service References\ProjectService\ProjectTeamDataSet.xsd" />
+    <None Include="Service References\ProjectService\SyncDataSet.xsd" />
+    <None Include="Service References\ProjectService\SyncErrorsDataSet.xsd" />
+    <None Include="Service References\ResourceService\DoubleGis.University.ResourceService.ResourceAssignmentDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceService\DoubleGis.University.ResourceService.ResourceAuthorizationDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceService\DoubleGis.University.ResourceService.ResourceDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceService\DoubleGis.University.ResourceService.UserDelegationDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceService\Resource.wsdl" />
+    <None Include="Service References\ResourceService\Resource.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceService\Resource1.wsdl" />
+    <None Include="Service References\ResourceService\Resource1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceService\Resource2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceService\Resource3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceService\ResourceAssignmentDataSet.xsd" />
+    <None Include="Service References\ResourceService\ResourceAuthorizationDataSet.xsd" />
+    <None Include="Service References\ResourceService\ResourceDataSet.xsd" />
+    <None Include="Service References\ResourceService\UserDelegationDataSet.xsd" />
+    <None Include="Service References\StatusingService\AssnHistoryDataSet.xsd" />
+    <None Include="Service References\StatusingService\DelegationDataSet.xsd" />
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.AssnHistoryDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.DelegationDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.ImportTimesheetDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.ProjectDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.ScheduleDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusApprovalDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusApprovalTransactionDetailsDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusingAssignmentDependenciesDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusingAssignmentsDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusingDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusingTimephasedActualsDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.StatusTransactionDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\DoubleGis.University.StatusingService.SummaryTaskPathDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatusingService\ImportTimesheetDataSet.xsd" />
+    <None Include="Service References\StatusingService\ProjectDataSet.xsd" />
+    <None Include="Service References\StatusingService\ScheduleDataSet.xsd" />
+    <None Include="Service References\StatusingService\StatusApprovalDataSet.xsd" />
+    <None Include="Service References\StatusingService\StatusApprovalTransactionDetailsDataSet.xsd" />
+    <None Include="Service References\StatusingService\Statusing.wsdl" />
+    <None Include="Service References\StatusingService\Statusing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatusingService\Statusing1.wsdl" />
+    <None Include="Service References\StatusingService\Statusing1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatusingService\Statusing2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatusingService\Statusing3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatusingService\StatusingAssignmentDependenciesDataSet.xsd" />
+    <None Include="Service References\StatusingService\StatusingAssignmentsDataSet.xsd" />
+    <None Include="Service References\StatusingService\StatusingDataSet.xsd" />
+    <None Include="Service References\StatusingService\StatusingTimephasedActualsDataSet.xsd" />
+    <None Include="Service References\StatusingService\StatusTransactionDataSet.xsd" />
+    <None Include="Service References\StatusingService\SummaryTaskPathDataSet.xsd" />
+    <None Include="Service References\ResourceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ResourceService\configuration.svcinfo" />
+    <None Include="Service References\ResourceService\configuration91.svcinfo" />
+    <None Include="Service References\ResourceService\Resource.disco" />
+    <None Include="Service References\ObjectLinkProviderService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ObjectLinkProviderService\configuration.svcinfo" />
+    <None Include="Service References\ObjectLinkProviderService\configuration91.svcinfo" />
+    <None Include="Service References\ObjectLinkProviderService\ObjectLinkProvider.disco" />
+    <None Include="Service References\StatusingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StatusingService\configuration.svcinfo" />
+    <None Include="Service References\StatusingService\configuration91.svcinfo" />
+    <None Include="Service References\StatusingService\Statusing.disco" />
+    <None Include="Service References\LookupTableService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LookupTableService\configuration.svcinfo" />
+    <None Include="Service References\LookupTableService\configuration91.svcinfo" />
+    <None Include="Service References\LookupTableService\LookupTable.disco" />
+    <None Include="Service References\CustomFieldsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CustomFieldsService\configuration.svcinfo" />
+    <None Include="Service References\CustomFieldsService\configuration91.svcinfo" />
+    <None Include="Service References\CustomFieldsService\CustomFields.disco" />
+    <None Include="Service References\ProjectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ProjectService\configuration.svcinfo" />
+    <None Include="Service References\ProjectService\configuration91.svcinfo" />
+    <None Include="Service References\ProjectService\Project.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CustomFieldsService\" />
+    <WCFMetadataStorage Include="Service References\LookupTableService\" />
+    <WCFMetadataStorage Include="Service References\ObjectLinkProviderService\" />
+    <WCFMetadataStorage Include="Service References\ProjectService\" />
+    <WCFMetadataStorage Include="Service References\ResourceService\" />
+    <WCFMetadataStorage Include="Service References\StatusingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdsModel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/ObjectLinkProviderDataSet/" id="ObjectLinkProviderDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="ObjectLinkProviderDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="WebObjectLinks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="WOBJLINK_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="WOBJLINK_OBJECT1" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="WOBJLINK_OBJECT2" type="xs:string" />
+              <xs:element name="WOBJLINK_TYPE" type="xs:int" />
+              <xs:element minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WebObjects">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="WOBJ_UID" type="xs:string" />
+              <xs:element name="WOBJ_TYPE" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="WOBJ_PROJ_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="WOBJ_TASK_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="WOBJ_TP_ID" type="xs:int" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="WOBJ_LIST_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="WOBJ_DESC" type="xs:string" />
+              <xs:element minOccurs="0" name="WOBJ_DOC_REF_CNT" type="xs:int" />
+              <xs:element minOccurs="0" name="WOBJ_ISSUE_REF_CNT" type="xs:int" />
+              <xs:element minOccurs="0" name="WOBJ_OTHER_REF_CNT" type="xs:int" />
+              <xs:element minOccurs="0" name="WOBJ_RISK_REF_CNT" type="xs:int" />
+              <xs:element minOccurs="0" name="WOBJ_SHARED_MILESTONE_REF_CNT" type="xs:int" />
+              <xs:element minOccurs="0" name="WOBJ_COMMITMENT_REF_CNT" type="xs:int" />
+              <xs:element minOccurs="0" name="CREATED_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="MOD_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Dataset1Key1">
+      <xs:selector xpath=".//mstns:WebObjectLinks" />
+      <xs:field xpath="mstns:WOBJLINK_UID" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="Dataset1Key2">
+      <xs:selector xpath=".//mstns:WebObjects" />
+      <xs:field xpath="mstns:WOBJ_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

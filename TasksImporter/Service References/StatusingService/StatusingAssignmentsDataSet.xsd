@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentsDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentsDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/StatusingAssignmentsDataSet/" id="StatusingAssignmentsDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="StatusingAssignmentsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Assignments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="TASK_NAME" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="RES_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="TASK_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="ASSN_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_REG_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_OVT_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_REM_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_REM_OVT_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_ACT_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_ACT_OVT_WORK" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_START_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_FINISH_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_STOP_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_RESUME_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_ACT_START" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_ACT_FINISH" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_DELAY" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_COST" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_OVT_COST" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_REM_COST" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_REM_OVT_COST" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_ACT_COST" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_ACT_OVT_COST" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_CONTOUR_DATA" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="WASSN_UPDATE_TRACKING_MODE" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_PCT_WORK_COMPLETE" type="xs:short" />
+              <xs:element minOccurs="0" name="ASSN_UNITS" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ASSN_LEVELING_DELAY" type="xs:int" />
+              <xs:element minOccurs="0" name="ASSN_COST_RATE_TABLE" type="xs:short" />
+              <xs:element minOccurs="0" name="ASSN_IS_CONFIRMED" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ASSN_COST_IS_VALID" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WASSN_DELETED_IN_PROJ" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WASSN_IS_NEW_ASSN" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WASSN_ACTUALS_PENDING" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="WASSN_SEND_UPDATE_NEEDED" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WASSN_COMMENTS" type="xs:string" />
+              <xs:element minOccurs="0" name="WASSN_MGR_UPDATED" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WASSN_UPDATE_CONFLICT" type="xs:boolean" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="ASSN_UID" type="xs:string" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="PROJ_UID" type="xs:string" />
+              <xs:element minOccurs="0" name="PROJ_NAME" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_IS_SUMMARY" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PROJ_TYPE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Assignments1">
+      <xs:selector xpath=".//mstns:Assignments" />
+      <xs:field xpath="mstns:ASSN_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

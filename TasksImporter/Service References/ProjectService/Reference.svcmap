@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c8160545-44d4-4e3e-8ba8-8c0dd7045f89" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Project.disco" MetadataType="Disco" ID="2b38fb9c-ed2e-41c2-8835-dde237323f61" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?disco" />
+    <MetadataFile FileName="ProjectContextDataSet.xsd" MetadataType="Schema" ID="84e4acb7-4eea-432c-8bf1-5264e109dd48" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd6" />
+    <MetadataFile FileName="Project.xsd" MetadataType="Schema" ID="122ac935-238f-43da-8a92-6da38e5d95ee" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd2" />
+    <MetadataFile FileName="SyncErrorsDataSet.xsd" MetadataType="Schema" ID="8f1cd640-5440-403e-b982-ef44c1f54c7b" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd10" />
+    <MetadataFile FileName="ProjectRelationsDataSet.xsd" MetadataType="Schema" ID="0d47080b-263a-49ee-b0d0-fa5314e01834" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd7" />
+    <MetadataFile FileName="Project1.xsd" MetadataType="Schema" ID="7cf5e949-c8c9-41c6-9101-401e7082bb69" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProjectDataSet.xsd" MetadataType="Schema" ID="ec9d3f36-b329-47ce-9276-81a925e073c8" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd4" />
+    <MetadataFile FileName="Project2.xsd" MetadataType="Schema" ID="a73da0cc-e4ab-477f-ba26-1e66c67f4d34" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProjectImpactDataSet.xsd" MetadataType="Schema" ID="3dbc152b-2160-4526-9f39-a43a4df01b22" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd8" />
+    <MetadataFile FileName="Project.wsdl" MetadataType="Wsdl" ID="19b178d6-155c-463a-989b-ad03ce4317e5" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?wsdl" />
+    <MetadataFile FileName="ProjectTeamDataSet.xsd" MetadataType="Schema" ID="68930af7-77d4-46eb-a64d-d20a7d79b320" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd5" />
+    <MetadataFile FileName="Project3.xsd" MetadataType="Schema" ID="07927cd2-7cd7-4079-aadc-662d3f806973" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd1" />
+    <MetadataFile FileName="SyncDataSet.xsd" MetadataType="Schema" ID="170348f2-7f83-48b8-8906-58c8968ae1e4" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?xsd=xsd9" />
+    <MetadataFile FileName="Project1.wsdl" MetadataType="Wsdl" ID="74bf3052-a7b0-445b-aca6-85d05fe4686f" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

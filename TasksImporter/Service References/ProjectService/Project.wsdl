@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://schemas.microsoft.com/office/project/server/webservices/Project/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Project" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/office/project/server/webservices/Project/" location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_Project" type="i0:Project">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckOutProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CheckOutProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCheckInProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCheckInProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProjectAndCheckOut">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProjectAndCheckOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueAddToProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueAddToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProjectFromTemplate">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateProjectFromTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueDeleteProjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueRenameProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueRenameProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectEntities">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueDeleteFromProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteFromProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectTeam">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProjectTeam">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSchedulingContext">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadSchedulingContext" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectNameFromProjectUid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/GetProjectNameFromProjectUid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadServerListSeparator">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadServerListSeparator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectStatus">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueuePublish">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueuePublishSummary">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublishSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpgradeProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpgradeProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProposalProjectAndCheckout">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProposalProjectAndCheckout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOperationsWorkFromWssList">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateOperationsWorkFromWssList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectWorkspaceAddress">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectWorkspaceAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectList">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectListByDepartment">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueSynchronizeProjectWorkspace">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueSynchronizeProjectWorkspace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectImpacts">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectImpacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProjectImpacts">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectImpacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWssListSyncedProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateWssListSyncedProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProjectWithWss">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/SyncProjectWithWss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectSyncSettings">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectSyncSettings">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectSyncSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectSyncErrorInfo">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncErrorInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_Project1" type="i0:Project">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckOutProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CheckOutProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCheckInProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCheckInProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProjectAndCheckOut">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProjectAndCheckOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueAddToProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueAddToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProjectFromTemplate">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateProjectFromTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueDeleteProjects">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueRenameProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueRenameProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectEntities">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueDeleteFromProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueDeleteFromProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectTeam">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProjectTeam">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSchedulingContext">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadSchedulingContext" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectNameFromProjectUid">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/GetProjectNameFromProjectUid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadServerListSeparator">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadServerListSeparator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectStatus">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueuePublish">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueuePublishSummary">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueuePublishSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpgradeProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpgradeProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueCreateProposalProjectAndCheckout">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueCreateProposalProjectAndCheckout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOperationsWorkFromWssList">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateOperationsWorkFromWssList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectWorkspaceAddress">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectWorkspaceAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectList">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectListByDepartment">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueSynchronizeProjectWorkspace">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueSynchronizeProjectWorkspace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectImpacts">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectImpacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueueUpdateProjectImpacts">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/QueueUpdateProjectImpacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWssListSyncedProject">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/CreateWssListSyncedProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProjectWithWss">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/SyncProjectWithWss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectSyncSettings">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectSyncSettings">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/UpdateProjectSyncSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProjectSyncErrorInfo">
+      <soap:operation soapAction="http://schemas.microsoft.com/office/project/server/webservices/Project/ReadProjectSyncErrorInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerExecutionFaultFault">
+        <soap:fault use="literal" name="ServerExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DefaultServerFaultFault">
+        <soap:fault use="literal" name="DefaultServerFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Project">
+    <wsdl:port name="BasicHttpBinding_Project" binding="tns:BasicHttpBinding_Project">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc/secure" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_Project1" binding="tns:BasicHttpBinding_Project1">
+      <soap:address location="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Project.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

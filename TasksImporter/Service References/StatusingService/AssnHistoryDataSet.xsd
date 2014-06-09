@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/office/project/server/webservices/AssnHistoryDataSet/" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://schemas.microsoft.com/office/project/server/webservices/AssnHistoryDataSet/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/AssnHistoryDataSet/" id="AssnHistoryDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="AssnHistoryDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="History">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="ASSN_TRANS_UID" type="xs:string" />
+              <xs:element name="ASSN_TRANS_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element name="ASSN_TRANS_ACTION_ENUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="ASSN_TRANS_UPDATE_DATE" type="xs:dateTime" />
+              <xs:element name="ASSN_TRANS_SUBMIT_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_CHANGE_DATA" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="TASK_CHANGE_DATA" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="ASSN_TRANS_COMMENT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ASSN_TRANS_COMMENT_TYPE_ENUM" type="xs:unsignedByte" />
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" minOccurs="0" name="ASSN_TRANS_AUTHOR_RES_UID" type="xs:string" />
+              <xs:element name="RES_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RES_NAME_DELEGATEE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ASSN_TRANS_DATE_ENTERED" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ASSN_TRANS_DELEGATE_DATE" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="WASSN_UPDATE_TRACKING_MODE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CustomFields">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="MD_PROP_UID" type="xs:string" />
+              <xs:element name="MD_PROP_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="MD_PROP_TYPE_ENUM" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:CustomFields" />
+      <xs:field xpath="mstns:MD_PROP_UID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

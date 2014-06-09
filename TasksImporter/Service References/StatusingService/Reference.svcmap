@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="81bfe726-97d1-427d-a4bf-fb72de65f43a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StatusingAssignmentsDataSet.xsd" MetadataType="Schema" ID="689a5bb0-3292-47bc-9b5d-c8c9451a070c" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd13" />
+    <MetadataFile FileName="AssnHistoryDataSet.xsd" MetadataType="Schema" ID="635c26b9-c92c-468b-8c94-0ef3deae58a1" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd14" />
+    <MetadataFile FileName="StatusingAssignmentDependenciesDataSet.xsd" MetadataType="Schema" ID="24c53928-5f38-43fd-bbe7-7cc8c58e612e" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd7" />
+    <MetadataFile FileName="Statusing.xsd" MetadataType="Schema" ID="e929c2dc-e7bb-4cdf-8a44-291f7dd8f53e" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd2" />
+    <MetadataFile FileName="Statusing1.xsd" MetadataType="Schema" ID="c38a3af9-7d98-4410-b6a2-c2021837cc67" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd0" />
+    <MetadataFile FileName="StatusingDataSet.xsd" MetadataType="Schema" ID="311412df-b0bf-4e06-abee-8827bc86cac2" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd9" />
+    <MetadataFile FileName="ProjectDataSet.xsd" MetadataType="Schema" ID="5069b5fe-7716-453a-b86f-6d3984f5c062" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd12" />
+    <MetadataFile FileName="DelegationDataSet.xsd" MetadataType="Schema" ID="da444788-b4e4-42e2-8a59-fb4531d141cd" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd11" />
+    <MetadataFile FileName="StatusTransactionDataSet.xsd" MetadataType="Schema" ID="664826ff-677a-4263-a32d-deaa68c02db2" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd6" />
+    <MetadataFile FileName="StatusApprovalTransactionDetailsDataSet.xsd" MetadataType="Schema" ID="ff593341-feeb-4d4c-8065-63ce1c09505b" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd5" />
+    <MetadataFile FileName="ImportTimesheetDataSet.xsd" MetadataType="Schema" ID="2b1a2f4f-1946-4314-b6f8-b6e1a95668db" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd16" />
+    <MetadataFile FileName="StatusApprovalDataSet.xsd" MetadataType="Schema" ID="d395e6bf-c17d-4798-86a5-83b34d45bfef" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd4" />
+    <MetadataFile FileName="StatusingTimephasedActualsDataSet.xsd" MetadataType="Schema" ID="c2804597-0448-4deb-be80-a42ef901f422" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd10" />
+    <MetadataFile FileName="Statusing2.xsd" MetadataType="Schema" ID="4167c33c-5bb2-4a13-a77e-78fc9501d1e5" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd1" />
+    <MetadataFile FileName="Statusing.disco" MetadataType="Disco" ID="b3ffa097-8bcc-4f8a-ab2a-9130f538ce68" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?disco" />
+    <MetadataFile FileName="ScheduleDataSet.xsd" MetadataType="Schema" ID="28523732-aa87-49c9-805a-2d0b6dd3146b" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd15" />
+    <MetadataFile FileName="Statusing.wsdl" MetadataType="Wsdl" ID="fad1a437-1167-4b9f-ba65-a606707cb2b3" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?wsdl" />
+    <MetadataFile FileName="Statusing3.xsd" MetadataType="Schema" ID="07df6546-8473-4f5f-8bf2-b4d41e6bb3f3" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd3" />
+    <MetadataFile FileName="Statusing1.wsdl" MetadataType="Wsdl" ID="5acbdc9b-6a4b-40f7-97ff-f5ac69549060" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SummaryTaskPathDataSet.xsd" MetadataType="Schema" ID="2cc4b195-b302-474f-a3b4-47bdb85f1a71" SourceId="1" SourceUrl="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/Statusing.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

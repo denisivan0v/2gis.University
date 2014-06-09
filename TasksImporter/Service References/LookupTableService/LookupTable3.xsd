@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTable/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" />
+  <xs:import schemaLocation="http://project2010:32843/09541ea690cb48ecbb5b3579c2ce47ec/PSI/LookupTable.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableDataSet/" />
+  <xs:element name="CheckOutLookupTables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="array" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q1:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckOutLookupTablesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="CheckInLookupTables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="array" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="force" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInLookupTablesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadLookupTablesMultiLang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xmlFilter" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLookupTablesMultiLangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadLookupTablesMultiLangResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLookupTablesMultiLang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLookupTablesMultiLangResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="DeleteLookupTables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltGuids" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLookupTablesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UpdateLookupTablesMultiLang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLookupTablesMultiLangResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ReadLookupTables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="xmlFilter" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="language" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLookupTablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadLookupTablesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLookupTablesByUids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltUidList" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="language" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLookupTablesByUidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadLookupTablesByUidsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLookupTablesMultiLangByUids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltUidList" type="tns:ArrayOfGuid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckOut" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadLookupTablesMultiLangByUidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReadLookupTablesMultiLangByUidsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableMultiLangDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLookupTables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLookupTablesResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UpdateLookupTables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ltds">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://schemas.microsoft.com/office/project/server/webservices/LookupTableDataSet/" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" maxOccurs="1" name="validateOnly" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="autoCheckIn" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="language" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLookupTablesResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>
