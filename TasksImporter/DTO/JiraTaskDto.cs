@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TasksImporter.DTO
+namespace DoubleGis.University.DTO
 {
     public class JiraTaskDto
     {
@@ -10,7 +10,7 @@ namespace TasksImporter.DTO
         public string ProjectName { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        public string Priority { get; set; }
+        public int Priority { get; set; }
         public string Status { get; set; }
         public string Resolution { get; set; }
         public string Assignee { get; set; }
