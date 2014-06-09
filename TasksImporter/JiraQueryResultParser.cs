@@ -37,12 +37,11 @@ namespace DoubleGis.University
                             Status = (string)item.Element("status"),
                             Resolution = (string)item.Element("resolution"),
                             Assignee = (string)item.Element("assignee"),
-                            Created = DateTime.ParseExact(item.Element("created").Value, DateFormat, RuCulture),
-                            DueDate = DateTime.ParseExact(item.Element("due").Value, DateFormat, RuCulture),
+                            Created = (DateTime)item.Element("created"),
+                            DueDate = !item.Element("due").IsEmpty ? DateTime.ParseExact(item.Element("due").Value, DateFormat, RuCulture) : DateTime.Now,
                             TaskLinks = from link in item.Descendants("issuelink")
                                         select (int)link.Element("issuekey").Attribute("id")
                         })
-
                 .ToArray();
 
             // ReSharper enable PossibleNullReferenceException

@@ -14,7 +14,7 @@ namespace DoubleGis.University
                                        .Where(x => x.PROJ_NAME == projectName)
                                        .Select(x => x.PROJ_UID)
                                        .SingleOrDefault();
-            return projectId != Guid.Empty ? projectClient.ReadProject(projectId, DataStoreEnum.WorkingStore) : null;
+            return projectId != Guid.Empty ? projectClient.ReadProject(projectId, DataStoreEnum.PublishedStore) : null;
         }
     }
 }
