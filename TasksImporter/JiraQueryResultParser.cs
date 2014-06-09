@@ -13,19 +13,17 @@ namespace DoubleGis.University
         private const string DateFormat = "ddd, dd MMM yyyy HH:mm:ss +0700";
         private static readonly CultureInfo RuCulture = CultureInfo.CreateSpecificCulture("ru-RU");
 
-        private readonly string _filePathName;
+        private XElement _xml;
 
         public JiraQueryResultParser(string filePathName)
         {
-            _filePathName = filePathName;
+            _xml = XElement.Load(filePathName);
         }
 
-        public IEnumerable<JiraTaskDto> Parse()
+        public IEnumerable<JiraTaskDto> ReadTasks()
         {
-            var xml = XElement.Load(_filePathName);
-            
             // ReSharper disable PossibleNullReferenceException
-            return (from item in xml.Descendants("item")
+            return (from item in _xml.Descendants("item")
                     select new JiraTaskDto
                         {
                             Id = (int)item.Element("key").Attribute("id"),
@@ -45,6 +43,21 @@ namespace DoubleGis.University
                 .ToArray();
 
             // ReSharper enable PossibleNullReferenceException
+        }
+
+        public IDictionary<int, IEnumerable<int>> ReadTaskRelations()
+        {
+            return (from item in _xml.Descendants("item")
+                    let outwardLinks = item.Descendants("outwardlinks")
+                    where outwardLinks.Any()
+                    select new
+                        {
+                            Id = (int)item.Element("key").Attribute("id"),
+                            OutwardLinks = from outwardLink in outwardLinks
+                                           from issueKey in outwardLink.Descendants("issuekey")
+                                           select (int)issueKey.Attribute("id")
+                        })
+                .ToDictionary(x => x.Id, x => x.OutwardLinks);
         }
     }
 }

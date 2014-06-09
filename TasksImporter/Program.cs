@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
+using DoubleGis.University.CustomFieldsService;
 using DoubleGis.University.DTO;
 using DoubleGis.University.ProjectService;
 
@@ -15,12 +16,17 @@ namespace DoubleGis.University
         private const string JiraProjectName = "JiraProjectName";
         private const string JiraTaskId = "JiraTaskId";
 
+        private const string IssuesFileName = "AdsModel.xml";
+        // private static readonly Uri PwaUri = new Uri("http://uk-erm-ps/pwa");
+        private static readonly Uri PwaUri = new Uri("http://erm-project.cloudapp.net/pwa");
+
         public static void Main()
         {
-            var parser = new JiraQueryResultParser("AdsModel.xml");
-            var jiraTaskDtos = parser.Parse();
+            var parser = new JiraQueryResultParser(IssuesFileName);
+            var jiraTaskDtos = parser.ReadTasks();
+            var jiraTaskRelations = parser.ReadTaskRelations();
 
-            var psiServiceFactory = new PsiServiceClientFactory(new Uri("http://uk-erm-ps/pwa"));
+            var psiServiceFactory = new PsiServiceClientFactory(PwaUri);
             var projectClient = psiServiceFactory.CreateProjectClient();
 
             var projectDataSet = PsiUtility.GetProject(projectClient, ProjectName);
@@ -37,14 +43,14 @@ namespace DoubleGis.University
                 return;
             }
 
-            var customFieldsClient = psiServiceFactory.CreateCustomFieldsClient();
-            var customFieldDataSet = customFieldsClient.ReadCustomFields(string.Empty, false);
-            var jiraProjectIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectId);
-            var jiraProjectNameCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectName);
-            var jiraTaskIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraTaskId);
-            if (jiraProjectIdCustomField == null || jiraProjectNameCustomField == null || jiraTaskIdCustomField == null)
+            CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField;
+            CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField;
+            CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField;
+            if (!TryReadCustomFields(psiServiceFactory,
+                                     out jiraProjectIdCustomField,
+                                     out jiraProjectNameCustomField,
+                                     out jiraTaskIdCustomField))
             {
-                Console.WriteLine("Custom fields {0} and/or {1} and/or {2} cannot be found", JiraProjectId, JiraProjectName, jiraTaskIdCustomField);
                 return;
             }
 
@@ -57,7 +63,6 @@ namespace DoubleGis.University
                                         Task = task
                                     })
                 .ToDictionary(x => x.JiraTaskId, x => x.Task);
-
 
             var projectDataSetToAdd = new ProjectDataSet();
             foreach (var taskDto in jiraTaskDtos)
@@ -92,10 +97,32 @@ namespace DoubleGis.University
             }
 
             var taskChanges = projectDataSet.Task.GetChanges(DataRowState.Modified | DataRowState.Added);
-            if (taskChanges != null && taskChanges.Rows.Count != 0)
+            var taskCustomFieldsChanges = projectDataSet.TaskCustomFields.GetChanges(DataRowState.Modified | DataRowState.Added);
+            if ((taskChanges != null && taskChanges.Rows.Count != 0) ||
+                (taskCustomFieldsChanges != null && taskCustomFieldsChanges.Rows.Count != 0))
             {
                 UpdateProject(projectClient, project.PROJ_UID, projectDataSet);
             }
+        }
+
+        private static bool TryReadCustomFields(PsiServiceClientFactory psiServiceFactory,
+                                             out CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
+                                             out CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField,
+                                             out CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField)
+        {
+            var customFieldsClient = psiServiceFactory.CreateCustomFieldsClient();
+            var customFieldDataSet = customFieldsClient.ReadCustomFields(string.Empty, false);
+            jiraProjectIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectId);
+            jiraProjectNameCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectName);
+            jiraTaskIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraTaskId);
+
+            if (jiraProjectIdCustomField != null && jiraProjectNameCustomField != null && jiraTaskIdCustomField != null)
+            {
+                return true;
+            }
+
+            Console.WriteLine("Custom fields {0} and/or {1} and/or {2} cannot be found", JiraProjectId, JiraProjectName, jiraTaskIdCustomField);
+            return false;
         }
 
         private static void AddNewTask(Guid projectId,
@@ -120,13 +147,13 @@ namespace DoubleGis.University
             jiraProjectNameCustomFieldRow.PROJ_UID = projectId;
             jiraProjectNameCustomFieldRow.TASK_UID = task.TASK_UID;
             jiraProjectNameCustomFieldRow.MD_PROP_UID = jiraProjectNameCustomFieldUid;
-            
+
             var jiraTaskIdCustomFieldRow = taskCustomFieldsTable.NewTaskCustomFieldsRow();
             jiraTaskIdCustomFieldRow.CUSTOM_FIELD_UID = Guid.NewGuid();
             jiraTaskIdCustomFieldRow.PROJ_UID = projectId;
             jiraTaskIdCustomFieldRow.TASK_UID = task.TASK_UID;
             jiraTaskIdCustomFieldRow.MD_PROP_UID = jiraTaskIdCustomFieldUid;
-            
+
             MapTaskFields(projectId,
                           taskDto,
                           task,
@@ -174,6 +201,7 @@ namespace DoubleGis.University
         {
             task.PROJ_UID = projectId;
             task.TASK_NAME = taskDto.Name;
+            task.TASK_DUR_FMT = 7;  // Days. http://msdn.microsoft.com/en-us/library/microsoft.office.project.server.library.task.durationformat(v=office.12).aspx
             task.TASK_START_DATE = taskDto.Created;
             task.TASK_FINISH_DATE = taskDto.DueDate;
             task.TASK_PRIORITY = taskDto.Priority;
