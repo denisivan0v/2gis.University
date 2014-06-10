@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -53,64 +54,99 @@ namespace DoubleGis.University
 
         public bool TryGetProjectDataSet(out ProjectDataSet projectDataSet)
         {
-            var projectClient = _psiServiceClientFactory.CreateProjectClient();
-
-            projectDataSet = PsiUtility.GetProject(projectClient, ProjectName);
-            if (projectDataSet == null)
+            using (var projectClient = _psiServiceClientFactory.CreateProjectClient())
             {
-                _errorsContainer.AppendFormat("Project {0} cannot be found", ProjectName);
-                return false;
-            }
+                projectDataSet = PsiUtility.GetProject(projectClient, ProjectName);
+                if (projectDataSet == null)
+                {
+                    _errorsContainer.AppendFormat("Project {0} cannot be found", ProjectName);
+                    return false;
+                }
 
-            var project = projectDataSet.Project.SingleOrDefault();
-            if (project == null)
-            {
-                _errorsContainer.AppendFormat("Project {0} cannot be found within project data set", ProjectName);
-                return false;
-            }
+                var project = projectDataSet.Project.SingleOrDefault();
+                if (project == null)
+                {
+                    _errorsContainer.AppendFormat("Project {0} cannot be found within project data set", ProjectName);
+                    return false;
+                }
 
-            return true;
+                return true;
+            }
         }
 
         public bool TryReadCustomFields(out CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
                                         out CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField,
                                         out CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField)
         {
-            var customFieldsClient = _psiServiceClientFactory.CreateCustomFieldsClient();
-            var customFieldDataSet = customFieldsClient.ReadCustomFields(string.Empty, false);
-            jiraProjectIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectId);
-            jiraProjectNameCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectName);
-            jiraTaskIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraTaskId);
-
-            if (jiraProjectIdCustomField != null && jiraProjectNameCustomField != null && jiraTaskIdCustomField != null)
+            using (var customFieldsClient = _psiServiceClientFactory.CreateCustomFieldsClient())
             {
-                return true;
-            }
+                var customFieldDataSet = customFieldsClient.ReadCustomFields(string.Empty, false);
+                jiraProjectIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectId);
+                jiraProjectNameCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectName);
+                jiraTaskIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraTaskId);
 
-            _errorsContainer.AppendFormat("Custom fields {0} and/or {1} and/or {2} cannot be found", JiraProjectId, JiraProjectName, jiraTaskIdCustomField);
-            return false;
+                if (jiraProjectIdCustomField != null && jiraProjectNameCustomField != null && jiraTaskIdCustomField != null)
+                {
+                    return true;
+                }
+
+                _errorsContainer.AppendFormat("Custom fields {0} and/or {1} and/or {2} cannot be found", JiraProjectId, JiraProjectName, jiraTaskIdCustomField);
+                return false;
+            }
         }
 
-        public IDictionary<int, ProjectDataSet.TaskRow> GetExistingTasksByJiraKeys(CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField, out Guid projectId)
+        public void MakeChangesInProjectServer(Guid projectId,
+                                               ProjectDataSet projectDataSetToAdd,
+                                               ProjectDataSet projectDataSetToUpdate)
         {
-            ProjectDataSet projectDataSet;
-            if (!TryGetProjectDataSet(out projectDataSet))
+            if (projectDataSetToAdd.Task.Any())
             {
-                projectId = Guid.Empty;
-                return null;
+                AddToProject(projectId, projectDataSetToAdd);
             }
 
-            projectId = projectDataSet.Project.Single().PROJ_UID;
+            var taskChanges = projectDataSetToUpdate.Task.GetChanges(DataRowState.Modified);
+            var taskCustomFieldsChanges = projectDataSetToUpdate.TaskCustomFields.GetChanges(DataRowState.Modified);
+            if ((taskChanges != null && taskChanges.Rows.Count != 0) ||
+                (taskCustomFieldsChanges != null && taskCustomFieldsChanges.Rows.Count != 0))
+            {
+                UpdateProject(projectId, projectDataSetToUpdate);
+            }
+        }
 
-            return (from task in projectDataSet.Task
-                    join customField in projectDataSet.TaskCustomFields.Where(x => x.MD_PROP_UID == jiraTaskIdCustomField.MD_PROP_UID)
-                        on task.TASK_UID equals customField.TASK_UID
-                    select new
-                        {
-                            JiraTaskId = customField != null ? int.Parse(customField.TEXT_VALUE) : 0,
-                            Task = task
-                        })
-                .ToDictionary(x => x.JiraTaskId, x => x.Task);
+        private void AddToProject(Guid projectId, ProjectDataSet projectDataSet)
+        {
+            AddToOrUpdateProject(projectId,
+                                 (jodId, sessionId, client) => client.QueueAddToProject(jodId, sessionId, projectDataSet, false));
+        }
+
+        private void UpdateProject(Guid projectId, ProjectDataSet projectDataSet)
+        {
+            AddToOrUpdateProject(projectId,
+                                 (jodId, sessionId, client) => client.QueueUpdateProject(jodId, sessionId, projectDataSet, false));
+        }
+
+        private void AddToOrUpdateProject(Guid projectId, Action<Guid, Guid, Project> action)
+        {
+            var sessionId = Guid.NewGuid();
+            var jodId = Guid.NewGuid();
+
+            using (var projectClient = _psiServiceClientFactory.CreateProjectClient())
+            {
+                try
+                {
+                    projectClient.CheckOutProject(projectId, sessionId, string.Empty);
+                    action(jodId, sessionId, projectClient);
+                    projectClient.QueuePublish(jodId, projectId, true, string.Empty);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    projectClient.QueueCheckInProject(jodId, projectId, true, sessionId, "TasksImporter updates");
+                }
+            }
         }
     }
 }

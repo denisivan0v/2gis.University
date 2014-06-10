@@ -54,6 +54,7 @@
     <Compile Include="DTO\JiraTaskDto.cs" />
     <Compile Include="JiraQueryResultParser.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectDataSetExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsiServiceClientFactory.cs" />
     <Compile Include="PsiUtility.cs" />

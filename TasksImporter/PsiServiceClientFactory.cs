@@ -46,66 +46,49 @@ namespace DoubleGis.University
 
         public ResourceClient CreateResourceClient()
         {
-            if (_resourceClient == null)
-            {
-                _resourceClient = new ResourceClient(_binding, _endpointAddress);
-                SetCredenticalProperties<ResourceClient, Resource>(_resourceClient);
-            }
+            
+            _resourceClient = new ResourceClient(_binding, _endpointAddress);
+            SetCredenticalProperties<ResourceClient, Resource>(_resourceClient);
 
             return _resourceClient;
         }
 
         public ProjectClient CreateProjectClient()
         {
-            if (_projectClient == null)
-            {
-                _projectClient = new ProjectClient(_binding, _endpointAddress);
-                SetCredenticalProperties<ProjectClient, Project>(_projectClient);
-            }
+            _projectClient = new ProjectClient(_binding, _endpointAddress);
+            SetCredenticalProperties<ProjectClient, Project>(_projectClient);
 
             return _projectClient;
         }
 
         public CustomFieldsClient CreateCustomFieldsClient()
         {
-            if (_customFieldsClient == null)
-            {
-                _customFieldsClient = new CustomFieldsClient(_binding, _endpointAddress);
-                SetCredenticalProperties<CustomFieldsClient, CustomFields>(_customFieldsClient);
-            }
+            _customFieldsClient = new CustomFieldsClient(_binding, _endpointAddress);
+            SetCredenticalProperties<CustomFieldsClient, CustomFields>(_customFieldsClient);
 
             return _customFieldsClient;
         }
 
         public LookupTableClient CreateLookupTableClient()
         {
-            if (_lookupTableClient == null)
-            {
-                _lookupTableClient = new LookupTableClient(_binding, _endpointAddress);
-                SetCredenticalProperties<LookupTableClient, LookupTable>(_lookupTableClient);
-            }
-
+            _lookupTableClient = new LookupTableClient(_binding, _endpointAddress);
+            SetCredenticalProperties<LookupTableClient, LookupTable>(_lookupTableClient);
+            
             return _lookupTableClient;
         }
 
         public ObjectLinkProviderClient CreateObjectLinkProviderClient()
         {
-            if (_objectLinkProviderClient == null)
-            {
-                _objectLinkProviderClient = new ObjectLinkProviderClient(_binding, _endpointAddress);
-                SetCredenticalProperties<ObjectLinkProviderClient, ObjectLinkProvider>(_objectLinkProviderClient);
-            }
+            _objectLinkProviderClient = new ObjectLinkProviderClient(_binding, _endpointAddress);
+            SetCredenticalProperties<ObjectLinkProviderClient, ObjectLinkProvider>(_objectLinkProviderClient);
 
             return _objectLinkProviderClient;
         }
 
         public StatusingClient CreateStatusingClient()
         {
-            if (_statusingClient == null)
-            {
-                _statusingClient = new StatusingClient(_binding, _endpointAddress);
-                SetCredenticalProperties<StatusingClient, Statusing>(_statusingClient);
-            }
+            _statusingClient = new StatusingClient(_binding, _endpointAddress);
+            SetCredenticalProperties<StatusingClient, Statusing>(_statusingClient);
 
             return _statusingClient;
         }
