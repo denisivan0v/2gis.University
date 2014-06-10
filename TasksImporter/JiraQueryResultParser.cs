@@ -13,7 +13,7 @@ namespace DoubleGis.University
         private const string DateFormat = "ddd, dd MMM yyyy HH:mm:ss +0700";
         private static readonly CultureInfo RuCulture = CultureInfo.CreateSpecificCulture("ru-RU");
 
-        private XElement _xml;
+        private readonly XElement _xml;
 
         public JiraQueryResultParser(string filePathName)
         {
