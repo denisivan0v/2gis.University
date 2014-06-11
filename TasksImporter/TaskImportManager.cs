@@ -54,24 +54,21 @@ namespace DoubleGis.University
 
         public bool TryGetProjectDataSet(out ProjectDataSet projectDataSet)
         {
-            using (var projectClient = _psiServiceClientFactory.CreateProjectClient())
+            projectDataSet = GetProject(ProjectName);
+            if (projectDataSet == null)
             {
-                projectDataSet = PsiUtility.GetProject(projectClient, ProjectName);
-                if (projectDataSet == null)
-                {
-                    _errorsContainer.AppendFormat("Project {0} cannot be found", ProjectName);
-                    return false;
-                }
-
-                var project = projectDataSet.Project.SingleOrDefault();
-                if (project == null)
-                {
-                    _errorsContainer.AppendFormat("Project {0} cannot be found within project data set", ProjectName);
-                    return false;
-                }
-
-                return true;
+                _errorsContainer.AppendFormat("Project {0} cannot be found", ProjectName);
+                return false;
             }
+
+            var project = projectDataSet.Project.SingleOrDefault();
+            if (project == null)
+            {
+                _errorsContainer.AppendFormat("Project {0} cannot be found within project data set", ProjectName);
+                return false;
+            }
+
+            return true;
         }
 
         public bool TryReadCustomFields(out CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
@@ -113,6 +110,19 @@ namespace DoubleGis.University
             }
         }
 
+        private ProjectDataSet GetProject(string projectName)
+        {
+            using (var projectClient = _psiServiceClientFactory.CreateProjectClient())
+            {
+                var projectList = projectClient.ReadProjectList();
+                var projectId = projectList.Project
+                                           .Where(x => x.PROJ_NAME == projectName)
+                                           .Select(x => x.PROJ_UID)
+                                           .SingleOrDefault();
+                return projectId != Guid.Empty ? projectClient.ReadProject(projectId, DataStoreEnum.PublishedStore) : null;
+            }
+        }
+
         private void AddToProject(Guid projectId, ProjectDataSet projectDataSet)
         {
             AddToOrUpdateProject(projectId,
@@ -140,7 +150,8 @@ namespace DoubleGis.University
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    _errorsContainer.AppendFormat("Error occured while updating data using PSI. Details: {0}", ex);
+                    throw;
                 }
                 finally
                 {

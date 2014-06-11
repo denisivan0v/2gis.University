@@ -32,7 +32,20 @@ namespace DoubleGis.University
             {
                 return;
             }
-            
+
+            // AddOrUpdateTasks(taskImportManager, jiraTaskDtos, jiraTaskIdCustomField, jiraProjectIdCustomField, jiraProjectNameCustomField);
+            while (!TryUpdateTaskRelations(taskImportManager, jiraTaskIdCustomField, jiraTaskRelations))
+            {
+                Console.WriteLine("Retrying update task relations...");
+            }
+        }
+
+        private static void AddOrUpdateTasks(TaskImportManager taskImportManager,
+                                             IEnumerable<JiraTaskDto> jiraTaskDtos,
+                                             CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
+                                             CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
+                                             CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField)
+        {
             var projectDataSetToAdd = new ProjectDataSet();
 
             ProjectDataSet projectDataSetToUpdate;
@@ -68,6 +81,32 @@ namespace DoubleGis.University
             }
 
             taskImportManager.MakeChangesInProjectServer(projectId, projectDataSetToAdd, projectDataSetToUpdate);
+        }
+
+        private static bool TryUpdateTaskRelations(TaskImportManager taskImportManager,
+                                                   CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
+                                                   IDictionary<int, IEnumerable<int>> jiraTaskRelations)
+        {
+            var taskRelationsUpdater = new TaskRelationsUpdater(jiraTaskIdCustomField);
+
+            ProjectDataSet projectDataSet;
+            if (!taskImportManager.TryGetProjectDataSet(out projectDataSet))
+            {
+                Console.WriteLine(taskImportManager.GetAllErrors());
+                return false;
+            }
+
+            var projectId = taskRelationsUpdater.UpdateRelations(projectDataSet, jiraTaskRelations);
+            try
+            {
+                taskImportManager.MakeChangesInProjectServer(projectId, new ProjectDataSet(), projectDataSet);
+                return true;
+            }
+            catch
+            {
+                Console.WriteLine(taskImportManager.GetAllErrors());
+                return false;
+            }
         }
     }
 }
