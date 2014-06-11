@@ -13,7 +13,7 @@ namespace DoubleGis.University
         private const string DateFormat = "ddd, dd MMM yyyy HH:mm:ss +0700";
         private static readonly CultureInfo RuCulture = CultureInfo.CreateSpecificCulture("ru-RU");
 
-        private XElement _xml;
+        private readonly XElement _xml;
 
         public JiraQueryResultParser(string filePathName)
         {
@@ -36,7 +36,9 @@ namespace DoubleGis.University
                             Resolution = (string)item.Element("resolution"),
                             Assignee = (string)item.Element("assignee"),
                             Created = (DateTime)item.Element("created"),
-                            DueDate = !item.Element("due").IsEmpty ? DateTime.ParseExact(item.Element("due").Value, DateFormat, RuCulture) : DateTime.Now,
+                            DueDate = !item.Element("due").IsEmpty && !string.IsNullOrEmpty(item.Element("due").Value)
+                                          ? DateTime.ParseExact(item.Element("due").Value, DateFormat, RuCulture)
+                                          : DateTime.Now,
                             TaskLinks = from link in item.Descendants("issuelink")
                                         select (int)link.Element("issuekey").Attribute("id")
                         })

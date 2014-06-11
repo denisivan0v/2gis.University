@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 
 using DoubleGis.University.CustomFieldsService;
 using DoubleGis.University.DTO;
@@ -11,237 +9,102 @@ namespace DoubleGis.University
 {
     public static class Program
     {
-        private const string ProjectName = "CorpUniversity";
-        private const string JiraProjectId = "JiraProjectId";
-        private const string JiraProjectName = "JiraProjectName";
-        private const string JiraTaskId = "JiraTaskId";
-
         private const string IssuesFileName = "AdsModel.xml";
-        // private static readonly Uri PwaUri = new Uri("http://uk-erm-ps/pwa");
+       
         private static readonly Uri PwaUri = new Uri("http://erm-project.cloudapp.net/pwa");
 
         public static void Main()
         {
-            var parser = new JiraQueryResultParser(IssuesFileName);
-            var jiraTaskDtos = parser.ReadTasks();
-            var jiraTaskRelations = parser.ReadTaskRelations();
+            var taskImportManager = new TaskImportManager(PwaUri, IssuesFileName);
 
-            var psiServiceFactory = new PsiServiceClientFactory(PwaUri);
-            var projectClient = psiServiceFactory.CreateProjectClient();
-
-            var projectDataSet = PsiUtility.GetProject(projectClient, ProjectName);
-            if (projectDataSet == null)
+            IEnumerable<JiraTaskDto> jiraTaskDtos;
+            IDictionary<int, IEnumerable<int>> jiraTaskRelations;
+            if (!taskImportManager.TryParseSource(out jiraTaskDtos, out jiraTaskRelations))
             {
-                Console.WriteLine("Project {0} cannot be found", ProjectName);
-                return;
-            }
-
-            var project = projectDataSet.Project.SingleOrDefault();
-            if (project == null)
-            {
-                Console.WriteLine("Project {0} cannot be found", ProjectName);
+                Console.WriteLine(taskImportManager.GetAllErrors());
                 return;
             }
 
             CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField;
             CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField;
             CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField;
-            if (!TryReadCustomFields(psiServiceFactory,
-                                     out jiraProjectIdCustomField,
-                                     out jiraProjectNameCustomField,
-                                     out jiraTaskIdCustomField))
+            if (!taskImportManager.TryReadCustomFields(out jiraProjectIdCustomField, out jiraProjectNameCustomField, out jiraTaskIdCustomField))
             {
                 return;
             }
 
-            var projectTasks = (from task in projectDataSet.Task
-                                join customField in Enumerable.Where(projectDataSet.TaskCustomFields, x => x.MD_PROP_UID == jiraTaskIdCustomField.MD_PROP_UID)
-                                    on task.TASK_UID equals customField.TASK_UID
-                                select new
-                                    {
-                                        JiraTaskId = customField != null ? int.Parse(customField.TEXT_VALUE) : 0,
-                                        Task = task
-                                    })
-                .ToDictionary(x => x.JiraTaskId, x => x.Task);
+            AddOrUpdateTasks(taskImportManager, jiraTaskDtos, jiraTaskIdCustomField, jiraProjectIdCustomField, jiraProjectNameCustomField);
+            while (!TryUpdateTaskRelations(taskImportManager, jiraTaskIdCustomField, jiraTaskRelations))
+            {
+                Console.WriteLine("Retrying update task relations...");
+            }
+        }
 
+        private static void AddOrUpdateTasks(TaskImportManager taskImportManager,
+                                                IEnumerable<JiraTaskDto> jiraTaskDtos,
+                                                CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
+                                                CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
+                                                CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField)
+        {
             var projectDataSetToAdd = new ProjectDataSet();
+
+            ProjectDataSet projectDataSetToUpdate;
+            if (!taskImportManager.TryGetProjectDataSet(out projectDataSetToUpdate))
+            {
+                Console.WriteLine(taskImportManager.GetAllErrors());
+            }
+
+            Guid projectId;
+            var projectTasks = projectDataSetToUpdate.GetExistingTasksByJiraKeys(jiraTaskIdCustomField, out projectId);
+
             foreach (var taskDto in jiraTaskDtos)
             {
                 ProjectDataSet.TaskRow taskRow;
                 if (!projectTasks.TryGetValue(taskDto.Id, out taskRow))
                 {
-                    AddNewTask(project.PROJ_UID,
-                               jiraProjectIdCustomField.MD_PROP_UID,
-                               jiraProjectNameCustomField.MD_PROP_UID,
-                               jiraTaskIdCustomField.MD_PROP_UID,
-                               projectDataSetToAdd.Task,
-                               projectDataSetToAdd.TaskCustomFields,
-                               taskDto);
+                    projectDataSetToAdd.AddNewTask(projectId,
+                                                   jiraProjectIdCustomField.MD_PROP_UID,
+                                                   jiraProjectNameCustomField.MD_PROP_UID,
+                                                   jiraTaskIdCustomField.MD_PROP_UID,
+                                                   taskDto);
                 }
                 else
                 {
-                    UpdateTask(project.PROJ_UID,
-                               taskRow.TASK_UID,
-                               jiraProjectIdCustomField.MD_PROP_UID,
-                               jiraProjectNameCustomField.MD_PROP_UID,
-                               jiraTaskIdCustomField.MD_PROP_UID,
-                               projectDataSet.Task,
-                               projectDataSet.TaskCustomFields,
-                               taskDto);
+                    projectDataSetToUpdate.UpdateTask(projectId,
+                                                      taskRow.TASK_UID,
+                                                      jiraProjectIdCustomField.MD_PROP_UID,
+                                                      jiraProjectNameCustomField.MD_PROP_UID,
+                                                      jiraTaskIdCustomField.MD_PROP_UID,
+                                                      taskDto);
                 }
             }
 
-            if (projectDataSetToAdd.Task.Any())
-            {
-                AddToProject(projectClient, project.PROJ_UID, projectDataSetToAdd);
-            }
-
-            var taskChanges = projectDataSet.Task.GetChanges(DataRowState.Modified | DataRowState.Added);
-            var taskCustomFieldsChanges = projectDataSet.TaskCustomFields.GetChanges(DataRowState.Modified | DataRowState.Added);
-            if ((taskChanges != null && taskChanges.Rows.Count != 0) ||
-                (taskCustomFieldsChanges != null && taskCustomFieldsChanges.Rows.Count != 0))
-            {
-                UpdateProject(projectClient, project.PROJ_UID, projectDataSet);
-            }
+            taskImportManager.MakeChangesInProjectServer(projectId, projectDataSetToAdd, projectDataSetToUpdate);
         }
 
-        private static bool TryReadCustomFields(PsiServiceClientFactory psiServiceFactory,
-                                             out CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
-                                             out CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField,
-                                             out CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField)
+        private static bool TryUpdateTaskRelations(TaskImportManager taskImportManager,
+                                                   CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
+                                                   IDictionary<int, IEnumerable<int>> jiraTaskRelations)
         {
-            var customFieldsClient = psiServiceFactory.CreateCustomFieldsClient();
-            var customFieldDataSet = customFieldsClient.ReadCustomFields(string.Empty, false);
-            jiraProjectIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectId);
-            jiraProjectNameCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraProjectName);
-            jiraTaskIdCustomField = customFieldDataSet.CustomFields.SingleOrDefault(x => x.MD_PROP_NAME == JiraTaskId);
-
-            if (jiraProjectIdCustomField != null && jiraProjectNameCustomField != null && jiraTaskIdCustomField != null)
-            {
-                return true;
-            }
-
-            Console.WriteLine("Custom fields {0} and/or {1} and/or {2} cannot be found", JiraProjectId, JiraProjectName, jiraTaskIdCustomField);
-            return false;
-        }
-
-        private static void AddNewTask(Guid projectId,
-                                       Guid jiraProjectIdCustomFieldUid,
-                                       Guid jiraProjectNameCustomFieldUid,
-                                       Guid jiraTaskIdCustomFieldUid,
-                                       ProjectDataSet.TaskDataTable taskTable,
-                                       ProjectDataSet.TaskCustomFieldsDataTable taskCustomFieldsTable,
-                                       JiraTaskDto taskDto)
-        {
-            var task = taskTable.NewTaskRow();
-            task.TASK_UID = Guid.NewGuid();
-
-            var jiraProjectIdCustomFieldRow = taskCustomFieldsTable.NewTaskCustomFieldsRow();
-            jiraProjectIdCustomFieldRow.CUSTOM_FIELD_UID = Guid.NewGuid();
-            jiraProjectIdCustomFieldRow.PROJ_UID = projectId;
-            jiraProjectIdCustomFieldRow.TASK_UID = task.TASK_UID;
-            jiraProjectIdCustomFieldRow.MD_PROP_UID = jiraProjectIdCustomFieldUid;
-
-            var jiraProjectNameCustomFieldRow = taskCustomFieldsTable.NewTaskCustomFieldsRow();
-            jiraProjectNameCustomFieldRow.CUSTOM_FIELD_UID = Guid.NewGuid();
-            jiraProjectNameCustomFieldRow.PROJ_UID = projectId;
-            jiraProjectNameCustomFieldRow.TASK_UID = task.TASK_UID;
-            jiraProjectNameCustomFieldRow.MD_PROP_UID = jiraProjectNameCustomFieldUid;
-
-            var jiraTaskIdCustomFieldRow = taskCustomFieldsTable.NewTaskCustomFieldsRow();
-            jiraTaskIdCustomFieldRow.CUSTOM_FIELD_UID = Guid.NewGuid();
-            jiraTaskIdCustomFieldRow.PROJ_UID = projectId;
-            jiraTaskIdCustomFieldRow.TASK_UID = task.TASK_UID;
-            jiraTaskIdCustomFieldRow.MD_PROP_UID = jiraTaskIdCustomFieldUid;
-
-            MapTaskFields(projectId,
-                          taskDto,
-                          task,
-                          jiraProjectIdCustomFieldRow,
-                          jiraProjectNameCustomFieldRow,
-                          jiraTaskIdCustomFieldRow);
-
-            taskTable.AddTaskRow(task);
-            taskCustomFieldsTable.AddTaskCustomFieldsRow(jiraProjectIdCustomFieldRow);
-            taskCustomFieldsTable.AddTaskCustomFieldsRow(jiraProjectNameCustomFieldRow);
-            taskCustomFieldsTable.AddTaskCustomFieldsRow(jiraTaskIdCustomFieldRow);
-        }
-
-        private static void UpdateTask(Guid projectId,
-                                       Guid taskId,
-                                       Guid jiraProjectIdCustomFieldUid,
-                                       Guid jiraProjectNameCustomFieldUid,
-                                       Guid jiraTaskIdCustomFieldUid,
-                                       IEnumerable<ProjectDataSet.TaskRow> taskTable,
-                                       IEnumerable<ProjectDataSet.TaskCustomFieldsRow> taskCustomFields,
-                                       JiraTaskDto taskDto)
-        {
-            var task = taskTable.Single(x => x.TASK_UID == taskId);
-
-            // ReSharper disable PossibleMultipleEnumeration
-            var jiraProjectIdCustomFieldRow = taskCustomFields.Single(x => x.TASK_UID == taskId && x.MD_PROP_UID == jiraProjectIdCustomFieldUid);
-            var jiraProjectNameCustomFieldRow = taskCustomFields.Single(x => x.TASK_UID == taskId && x.MD_PROP_UID == jiraProjectNameCustomFieldUid);
-            var jiraTaskIdCustomFieldRow = taskCustomFields.Single(x => x.TASK_UID == taskId && x.MD_PROP_UID == jiraTaskIdCustomFieldUid);
-            // ReSharper restore PossibleMultipleEnumeration
-
-            MapTaskFields(projectId,
-                          taskDto,
-                          task,
-                          jiraProjectIdCustomFieldRow,
-                          jiraProjectNameCustomFieldRow,
-                          jiraTaskIdCustomFieldRow);
-        }
-
-        private static void MapTaskFields(Guid projectId,
-                                          JiraTaskDto taskDto,
-                                          ProjectDataSet.TaskRow task,
-                                          ProjectDataSet.TaskCustomFieldsRow jiraProjectIdCustomFieldRow,
-                                          ProjectDataSet.TaskCustomFieldsRow jiraProjectNameCustomFieldRow,
-                                          ProjectDataSet.TaskCustomFieldsRow jiraTaskIdCustomFieldRow)
-        {
-            task.PROJ_UID = projectId;
-            task.TASK_NAME = taskDto.Name;
-            task.TASK_DUR_FMT = 7;  // Days. http://msdn.microsoft.com/en-us/library/microsoft.office.project.server.library.task.durationformat(v=office.12).aspx
-            task.TASK_START_DATE = taskDto.Created;
-            task.TASK_FINISH_DATE = taskDto.DueDate;
-            task.TASK_PRIORITY = taskDto.Priority;
-            jiraProjectIdCustomFieldRow.TEXT_VALUE = taskDto.ProjectId.ToString();
-            jiraProjectNameCustomFieldRow.TEXT_VALUE = taskDto.ProjectName;
-            jiraTaskIdCustomFieldRow.TEXT_VALUE = taskDto.Id.ToString();
-        }
-
-        private static void AddToProject(Project projectClient, Guid projectId, ProjectDataSet projectDataSet)
-        {
-            AddToOrUpdateProject(projectClient,
-                                 projectId,
-                                 (jodId, sessionId, client) => client.QueueAddToProject(jodId, sessionId, projectDataSet, false));
-        }
-
-        private static void UpdateProject(Project projectClient, Guid projectId, ProjectDataSet projectDataSet)
-        {
-            AddToOrUpdateProject(projectClient,
-                                 projectId,
-                                 (jodId, sessionId, client) => client.QueueUpdateProject(jodId, sessionId, projectDataSet, false));
-        }
-
-        private static void AddToOrUpdateProject(Project projectClient, Guid projectId, Action<Guid, Guid, Project> action)
-        {
-            var sessionId = Guid.NewGuid();
-            var jodId = Guid.NewGuid();
-
+            var taskRelationsUpdater = new TaskRelationsUpdater(jiraTaskIdCustomField);
             try
             {
-                projectClient.CheckOutProject(projectId, sessionId, string.Empty);
-                action(jodId, sessionId, projectClient);
-                projectClient.QueuePublish(jodId, projectId, true, string.Empty);
+                ProjectDataSet projectDataSet;
+                if (!taskImportManager.TryGetProjectDataSet(out projectDataSet))
+                {
+                    Console.WriteLine(taskImportManager.GetAllErrors());
+                    return false;
+                }
+
+                Guid projectId;
+                var projectDataSetToAdd = taskRelationsUpdater.UpdateRelations(projectDataSet, jiraTaskRelations, out projectId);
+                taskImportManager.MakeChangesInProjectServer(projectId, projectDataSetToAdd, projectDataSet);
+                return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                projectClient.QueueCheckInProject(jodId, projectId, true, sessionId, "TasksImporter updates");
+                Console.WriteLine(taskImportManager.GetAllErrors());
+                return false;
             }
         }
     }
