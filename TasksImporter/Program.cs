@@ -41,10 +41,10 @@ namespace DoubleGis.University
         }
 
         private static void AddOrUpdateTasks(TaskImportManager taskImportManager,
-                                             IEnumerable<JiraTaskDto> jiraTaskDtos,
-                                             CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
-                                             CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
-                                             CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField)
+                                                IEnumerable<JiraTaskDto> jiraTaskDtos,
+                                                CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
+                                                CustomFieldDataSet.CustomFieldsRow jiraProjectIdCustomField,
+                                                CustomFieldDataSet.CustomFieldsRow jiraProjectNameCustomField)
         {
             var projectDataSetToAdd = new ProjectDataSet();
 
@@ -52,7 +52,6 @@ namespace DoubleGis.University
             if (!taskImportManager.TryGetProjectDataSet(out projectDataSetToUpdate))
             {
                 Console.WriteLine(taskImportManager.GetAllErrors());
-                return;
             }
 
             Guid projectId;
