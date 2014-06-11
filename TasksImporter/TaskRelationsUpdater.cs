@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using DoubleGis.University.CustomFieldsService;
 using DoubleGis.University.ProjectService;
@@ -15,11 +16,11 @@ namespace DoubleGis.University
             _jiraTaskIdCustomField = jiraTaskIdCustomField;
         }
 
-        public ProjectDataSet UpdateRelations(ProjectDataSet projectDataSet, IDictionary<int, IEnumerable<int>> jiraTaskRelations, out Guid projectId)
+        public ProjectDataSet UpdateRelations(ProjectDataSet projectDataSetToUpdate, IDictionary<int, IEnumerable<int>> jiraTaskRelations, out Guid projectId)
         {
             var projectDataSetToAdd = new ProjectDataSet();
 
-            var tasksByJiraKeys = projectDataSet.GetExistingTasksByJiraKeys(_jiraTaskIdCustomField, out projectId);
+            var tasksByJiraKeys = projectDataSetToUpdate.GetExistingTasksByJiraKeys(_jiraTaskIdCustomField, out projectId);
             foreach (var jiraTaskRelation in jiraTaskRelations)
             {
                 ProjectDataSet.TaskRow mainTask;
@@ -34,20 +35,19 @@ namespace DoubleGis.University
 
                     if (tasksByJiraKeys.TryGetValue(relatedTaskId, out relatedTask))
                     {
-                        // ++relatedTask.TASK_OUTLINE_LEVEL;
-                        // relatedTask.AddPosition = (int)Task.AddPositionType.Middle;
-                        // relatedTask.AddAfterTaskUID = mainTask.TASK_UID;
+                        var dependency = projectDataSetToUpdate.Dependency.SingleOrDefault(x => x.LINK_PRED_UID == relatedTask.TASK_UID &&
+                                                                                                x.LINK_SUCC_UID == mainTask.TASK_UID);
+                        if (dependency == null)
+                        {
+                            dependency = projectDataSetToAdd.Dependency.NewDependencyRow();
+                            dependency.LINK_UID = Guid.NewGuid();
+                            dependency.PROJ_UID = projectId;
+                            dependency.LINK_PRED_UID = relatedTask.TASK_UID;
+                            dependency.LINK_SUCC_UID = mainTask.TASK_UID;
+                            dependency.LINK_TYPE = 2; // StartFinish, http://msdn.microsoft.com/en-us/library/websvcproject.projectdataset.dependencyrow.link_type(v=office.12).aspx
 
-                        // TODO Need to check existing dependencies
-
-                        var dependency = projectDataSetToAdd.Dependency.NewDependencyRow();
-                        dependency.LINK_UID = Guid.NewGuid();
-                        dependency.PROJ_UID = projectId;
-                        dependency.LINK_PRED_UID = relatedTask.TASK_UID;
-                        dependency.LINK_SUCC_UID = mainTask.TASK_UID;
-                        dependency.LINK_TYPE = 2; // StartFinish, http://msdn.microsoft.com/en-us/library/websvcproject.projectdataset.dependencyrow.link_type(v=office.12).aspx
-
-                        projectDataSetToAdd.Dependency.AddDependencyRow(dependency);
+                            projectDataSetToAdd.Dependency.AddDependencyRow(dependency);
+                        }
                     }
                 }
             }

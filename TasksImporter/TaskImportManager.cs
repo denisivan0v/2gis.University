@@ -96,11 +96,6 @@ namespace DoubleGis.University
                                                ProjectDataSet projectDataSetToAdd,
                                                ProjectDataSet projectDataSetToUpdate)
         {
-            if (projectDataSetToAdd.Task.Any() || projectDataSetToAdd.Dependency.Any())
-            {
-                AddToProject(projectId, projectDataSetToAdd);
-            }
-
             var taskChanges = projectDataSetToUpdate.Task.GetChanges(DataRowState.Modified);
             var taskCustomFieldsChanges = projectDataSetToUpdate.TaskCustomFields.GetChanges(DataRowState.Modified);
             var dependencies = projectDataSetToUpdate.Dependency.GetChanges(DataRowState.Added | DataRowState.Modified);
@@ -109,6 +104,11 @@ namespace DoubleGis.University
                 (dependencies != null && dependencies.Rows.Count != 0))
             {
                 UpdateProject(projectId, projectDataSetToUpdate);
+            }
+
+            if (projectDataSetToAdd.Task.Any() || projectDataSetToAdd.Dependency.Any())
+            {
+                AddToProject(projectId, projectDataSetToAdd);
             }
         }
 

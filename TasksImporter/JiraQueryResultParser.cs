@@ -36,7 +36,9 @@ namespace DoubleGis.University
                             Resolution = (string)item.Element("resolution"),
                             Assignee = (string)item.Element("assignee"),
                             Created = (DateTime)item.Element("created"),
-                            DueDate = !item.Element("due").IsEmpty ? DateTime.ParseExact(item.Element("due").Value, DateFormat, RuCulture) : DateTime.Now,
+                            DueDate = !item.Element("due").IsEmpty && !string.IsNullOrEmpty(item.Element("due").Value)
+                                          ? DateTime.ParseExact(item.Element("due").Value, DateFormat, RuCulture)
+                                          : DateTime.Now,
                             TaskLinks = from link in item.Descendants("issuelink")
                                         select (int)link.Element("issuekey").Attribute("id")
                         })
