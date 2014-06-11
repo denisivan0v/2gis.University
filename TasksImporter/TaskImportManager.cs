@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 
 using DoubleGis.University.CustomFieldsService;
@@ -103,12 +104,18 @@ namespace DoubleGis.University
                 (taskCustomFieldsChanges != null && taskCustomFieldsChanges.Rows.Count != 0) ||
                 (dependencies != null && dependencies.Rows.Count != 0))
             {
-                UpdateProject(projectId, projectDataSetToUpdate);
+                while (!TryUpdateProject(projectId, projectDataSetToUpdate))
+                {
+                    _errorsContainer.Append("Retrying updating...");
+                }
             }
 
             if (projectDataSetToAdd.Task.Any() || projectDataSetToAdd.Dependency.Any())
             {
-                AddToProject(projectId, projectDataSetToAdd);
+                while (!TryAddToProject(projectId, projectDataSetToAdd))
+                {
+                    _errorsContainer.Append("Retrying adding...");
+                }
             }
         }
 
@@ -125,19 +132,19 @@ namespace DoubleGis.University
             }
         }
 
-        private void AddToProject(Guid projectId, ProjectDataSet projectDataSet)
+        private bool TryAddToProject(Guid projectId, ProjectDataSet projectDataSet)
         {
-            AddToOrUpdateProject(projectId,
-                                 (jodId, sessionId, client) => client.QueueAddToProject(jodId, sessionId, projectDataSet, false));
+            return TryAddToOrUpdateProject(projectId,
+                                           (jodId, sessionId, client) => client.QueueAddToProject(jodId, sessionId, projectDataSet, false));
         }
 
-        private void UpdateProject(Guid projectId, ProjectDataSet projectDataSet)
+        private bool TryUpdateProject(Guid projectId, ProjectDataSet projectDataSet)
         {
-            AddToOrUpdateProject(projectId,
-                                 (jodId, sessionId, client) => client.QueueUpdateProject(jodId, sessionId, projectDataSet, false));
+            return TryAddToOrUpdateProject(projectId,
+                                           (jodId, sessionId, client) => client.QueueUpdateProject(jodId, sessionId, projectDataSet, false));
         }
 
-        private void AddToOrUpdateProject(Guid projectId, Action<Guid, Guid, Project> action)
+        private bool TryAddToOrUpdateProject(Guid projectId, Action<Guid, Guid, Project> action)
         {
             var sessionId = Guid.NewGuid();
             var jodId = Guid.NewGuid();
@@ -149,6 +156,13 @@ namespace DoubleGis.University
                     projectClient.CheckOutProject(projectId, sessionId, string.Empty);
                     action(jodId, sessionId, projectClient);
                     projectClient.QueuePublish(jodId, projectId, true, string.Empty);
+
+                    return true;
+                }
+                catch (FaultException ex)
+                {
+                    _errorsContainer.AppendFormat("Error occured while updating data using PSI. Details: {0}", ex);
+                    return false;
                 }
                 catch (Exception ex)
                 {
