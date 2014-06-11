@@ -13,6 +13,8 @@ namespace DoubleGis.University
 {
     public static class ProjectDataSetExtensions
     {
+        private static readonly string[] TaskCompletedStatuses = { "Closed", "Resolved" };
+
         public static IDictionary<int, ProjectDataSet.TaskRow> GetExistingTasksByJiraKeys(this ProjectDataSet projectDataSet,
                                                                                           CustomFieldDataSet.CustomFieldsRow jiraTaskIdCustomField,
                                                                                           out Guid projectId)
@@ -102,12 +104,19 @@ namespace DoubleGis.University
                                           ProjectDataSet.TaskCustomFieldsRow jiraProjectNameCustomFieldRow,
                                           ProjectDataSet.TaskCustomFieldsRow jiraTaskIdCustomFieldRow)
         {
+
             task.PROJ_UID = projectId;
             task.TASK_NAME = taskDto.Name;
             task.TASK_DUR_FMT = (int)Task.DurationFormat.Day;
             task.TASK_START_DATE = taskDto.Created;
             task.TASK_FINISH_DATE = taskDto.DueDate;
             task.TASK_PRIORITY = taskDto.Priority;
+            task.AddPosition = (int)Task.AddPositionType.Last;
+            if (TaskCompletedStatuses.Contains(taskDto.Status))
+            {
+                task.TASK_PHY_PCT_COMP = 100;
+            }
+
             jiraProjectIdCustomFieldRow.TEXT_VALUE = taskDto.ProjectId.ToString();
             jiraProjectNameCustomFieldRow.TEXT_VALUE = taskDto.ProjectName;
             jiraTaskIdCustomFieldRow.TEXT_VALUE = taskDto.Id.ToString();

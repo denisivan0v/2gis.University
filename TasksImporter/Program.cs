@@ -33,7 +33,7 @@ namespace DoubleGis.University
                 return;
             }
 
-            // AddOrUpdateTasks(taskImportManager, jiraTaskDtos, jiraTaskIdCustomField, jiraProjectIdCustomField, jiraProjectNameCustomField);
+            AddOrUpdateTasks(taskImportManager, jiraTaskDtos, jiraTaskIdCustomField, jiraProjectIdCustomField, jiraProjectNameCustomField);
             while (!TryUpdateTaskRelations(taskImportManager, jiraTaskIdCustomField, jiraTaskRelations))
             {
                 Console.WriteLine("Retrying update task relations...");
@@ -88,21 +88,21 @@ namespace DoubleGis.University
                                                    IDictionary<int, IEnumerable<int>> jiraTaskRelations)
         {
             var taskRelationsUpdater = new TaskRelationsUpdater(jiraTaskIdCustomField);
-
-            ProjectDataSet projectDataSet;
-            if (!taskImportManager.TryGetProjectDataSet(out projectDataSet))
-            {
-                Console.WriteLine(taskImportManager.GetAllErrors());
-                return false;
-            }
-
-            var projectId = taskRelationsUpdater.UpdateRelations(projectDataSet, jiraTaskRelations);
             try
             {
-                taskImportManager.MakeChangesInProjectServer(projectId, new ProjectDataSet(), projectDataSet);
+                ProjectDataSet projectDataSet;
+                if (!taskImportManager.TryGetProjectDataSet(out projectDataSet))
+                {
+                    Console.WriteLine(taskImportManager.GetAllErrors());
+                    return false;
+                }
+
+                Guid projectId;
+                var projectDataSetToAdd = taskRelationsUpdater.UpdateRelations(projectDataSet, jiraTaskRelations, out projectId);
+                taskImportManager.MakeChangesInProjectServer(projectId, projectDataSetToAdd, projectDataSet);
                 return true;
             }
-            catch
+            catch (Exception)
             {
                 Console.WriteLine(taskImportManager.GetAllErrors());
                 return false;
